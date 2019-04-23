@@ -4104,7 +4104,7 @@ Dependency and reproducibility
 </div>
 <h1 id="dependency-and-reproducibility" class="govuk-heading-xl">Dependency and reproducibility</h1>
 <p class="govuk-body">
-<em>Discuss this page on <a href="https://github.com/ukgovdatascience/rap-website/issues/6" class="govuk-link">GitHub</a>.</em>
+Discuss this page on <a href="https://github.com/ukgovdatascience/rap-website/issues/6" class="govuk-link">GitHub</a>.
 </p>
 <h2 id="other-peoples-code" class="govuk-heading-l">Other people’s code</h2>
 <p class="govuk-body">
@@ -4141,7 +4141,7 @@ Changes might not impact your publication. If changes do have an impact, the bes
 The problem is compounded if your dependencies depend on other dependencies, or if two of your dependencies require conflicting versions of a third dependency. You could get stuck in so-called <a href="https://en.wikipedia.org/wiki/Dependency_hell" class="govuk-link">dependency hell</a>.
 </p>
 <p class="govuk-body">
-The bottom line: your publication is dependent on particular software <em>and</em> its state at a given time. How can you deal with this? This chapter considers a few possibilities given variation in tools, techniques and IT restrictions.
+The bottom line: your publication is dependent on particular software and its state at a given time. How can you deal with this? This chapter considers a few possibilities given variation in tools, techniques and IT restrictions.
 </p>
 <h3 id="think-lightweight" class="govuk-heading-m">Think lightweight</h3>
 <p class="govuk-body">
@@ -4176,7 +4176,7 @@ It’s not enough to simply minimise your dependencies. You need to think about 
 <h2 id="approaches" class="govuk-heading-l">Approaches</h2>
 <h3 id="version-numbers" class="govuk-heading-m">Version numbers</h3>
 <p class="govuk-body">
-Maintainers signal updates by increasing the version number of their software. This could be a simple patch of an earlier version’s bug (e.g. version 3.2.7 replaces 3.2.6), or perhaps a major <em>breaking</em> change (e.g. version 3.2.6 is update to version 4.0.0).
+Maintainers signal updates by increasing the version number of their software. This could be a simple patch of an earlier version’s bug (e.g. version 3.2.7 replaces 3.2.6), or perhaps a major breaking change (e.g. version 3.2.6 is update to version 4.0.0).
 </p>
 <p class="govuk-body">
 There are many ways to record each of the packages used in our analysis and their version numbers.
@@ -4219,7 +4219,7 @@ You can achieve a similar thing for Python with <code>pip freeze</code> in a she
 ## appscript==1.0.1
 ...</code></pre>
 <p class="govuk-body">
-You can save this information with something like <code>pip freeze &gt; requirements.txt</code> in the shell. The packages should be ‘pinned’ to specific versions, meaning that they’re in the form <code>packageName==1.3.2</code> rather than <code>packageName&gt;=1.3.2</code>. We’re interested in storing <em>specific versions</em>, not <em>specific versions or newer</em>.
+You can save this information with something like <code>pip freeze &gt; requirements.txt</code> in the shell. The packages should be ‘pinned’ to specific versions, meaning that they’re in the form <code>packageName==1.3.2</code> rather than <code>packageName&gt;=1.3.2</code>. We’re interested in storing specific versions, not specific versions or newer.
 </p>
 <p class="govuk-body">
 But simply saving this information in your project folder isn’t good dependency control. It:
@@ -4229,7 +4229,7 @@ But simply saving this information in your project folder isn’t good dependenc
 would be tedious for analysts to read these reports and download each recorded package version one-by-one
 </li>
 <li class="govuk-body">
-records <em>every</em> package and its version <em>on your whole system</em>, not just the ones relevant to your project
+records every package and its version on your whole system, not just the ones relevant to your project
 </li>
 <li class="govuk-body">
 isn’t a reproducible or automated process
@@ -4254,7 +4254,7 @@ The <a href="https://rstudio.github.io/packrat/" class="govuk-link"><code>packra
 Activate ‘packrat mode’ in your project folder with <code>init()</code>, which records and snapshots the packages you’ve called in your scripts.
 </li>
 <li class="govuk-body">
-Install new packages as usual, except they’re now saved to a <em>private package repository</em> within the project, rather than your local machine.
+Install new packages as usual, except they’re now saved to a private package repository within the project, rather than your local machine.
 </li>
 <li class="govuk-body">
 By default, regular snapshots are taken to record the state of dependencies, but you can force one with <code>snapshot()</code>.
@@ -4264,7 +4264,7 @@ When opening the project fresh on a new machine, Packrat automates the process o
 </li>
 </ol>
 <p class="govuk-body">
-As for other options, <a href="https://github.com/RevolutionAnalytics/checkpoint/wiki" class="govuk-link">the <code>checkpoint</code> package</a> from Microsoft’s Revolution Analytics works like <code>packrat</code> but you simply <code>checkpoint()</code> your project for a given <em>date</em>. This allows you to call the packages from that date into a private library for that project. It works by fetching the packages from the <a href="https://mran.microsoft.com/" class="govuk-link">Microsoft R Application Network (MRAN)</a>, which is a daily snapshot of <a href="https://cran.r-project.org/" class="govuk-link">CRAN</a>. Note that this doesn’t permit control of packages that are hosted anywhere other than CRAN, such as Bioconductor or GitHub, and relies on Microsoft continuing to snapshot and store CRAN copies in MRAN.
+As for other options, <a href="https://github.com/RevolutionAnalytics/checkpoint/wiki" class="govuk-link">the <code>checkpoint</code> package</a> from Microsoft’s Revolution Analytics works like <code>packrat</code> but you simply <code>checkpoint()</code> your project for a given date. This allows you to call the packages from that date into a private library for that project. It works by fetching the packages from the <a href="https://mran.microsoft.com/" class="govuk-link">Microsoft R Application Network (MRAN)</a>, which is a daily snapshot of <a href="https://cran.r-project.org/" class="govuk-link">CRAN</a>. Note that this doesn’t permit control of packages that are hosted anywhere other than CRAN, such as Bioconductor or GitHub, and relies on Microsoft continuing to snapshot and store CRAN copies in MRAN.
 </p>
 <p class="govuk-body">
 Another option is <code>jetpack</code>, which is different to <code>packrat</code> because it uses a DESCRIPTION file to list your dependencies. <a href="http://r-pkgs.had.co.nz/description.html" class="govuk-link">DESCRIPTION files are used in package development</a> to store information, including that package’s dependencies. This is a lightweight option and can be run from the command line.
@@ -4308,7 +4308,7 @@ try to re-run the analysis on a different system, like if they try to run code o
 </li>
 </ul>
 <p class="govuk-body">
-What you really want to do is create a virtual computer inside your computer – a <em>container</em> – with everything you need to recreate the analysis under consistent conditions, regardless of who you are and what equipment you’re using.
+What you really want to do is create a virtual computer inside your computer – a container – with everything you need to recreate the analysis under consistent conditions, regardless of who you are and what equipment you’re using.
 </p>
 <p class="govuk-body">
 Imagine one of those ubiquitous <a href="https://en.wikipedia.org/wiki/Intermodal_container" class="govuk-link">shipping containers</a>. They are:
