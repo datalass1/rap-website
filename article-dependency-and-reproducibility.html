@@ -4078,9 +4078,99 @@ Dependency and reproducibility
 <p class="govuk-body">
 Discuss this page on <a href="https://github.com/ukgovdatascience/rap-website/issues/6" class="govuk-link">GitHub</a>.
 </p>
-<h2 id="other-peoples-code" class="govuk-heading-l">Other people’s code</h2>
+<h2 id="when-code-lets-you-down" class="govuk-heading-l">When code lets you down</h2>
 <p class="govuk-body">
-You’re likely to make use of other people’s code when you develop your RAP project. Maybe you’ve imported packages to perform a statistical test, for example. These dependencies can be extremely helpful. They can:
+Most statistical publications are <a href="https://www.gov.uk/government/statistics/announcements" class="govuk-link">updated on a scheduled basis</a> when new data becomes available. Usually the code will run perfectly, but sometimes it will break. The code didn’t change, so what went wrong?
+</p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+The data changed
+</li>
+<li class="govuk-body">
+Other people’s code changed
+</li>
+</ul>
+<p class="govuk-body">
+Data changes all the time, which is why your RAP project should check the data before it does anything else. Other people’s code also changes frequently. Unfortunately you can’t avoid this by only using your own code, because you would have to invent computers from scratch.
+</p>
+<p class="govuk-body">
+This article is about coping with changes to other people’s code, and writing code that other people can depend on.
+</p>
+<h2 id="who-is-affected" class="govuk-heading-l">Who is affected</h2>
+<p class="govuk-body">
+Three groups of people will use your code:
+</p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+The present day you
+</li>
+<li class="govuk-body">
+The future you
+</li>
+<li class="govuk-body">
+Other people at any time
+</li>
+</ul>
+<p class="govuk-body">
+The aims and starting points of each of these groups create different challenges. Different approaches can help you mitigate various problems that each group might face when using the scripts you’ve written.
+</p>
+<p class="govuk-body">
+<span class="govuk-!-font-weight-bold">Present day you</span> wants to create your outputs today. Your starting point is the packages that you have installed on the tools you are using to produce your outputs.
+</p>
+<p class="govuk-body">
+<span class="govuk-!-font-weight-bold">Future you</span> wants to re-use the code you’ve already written (some time ago) to update the outputs you’ve previously created. In between creating outputs you may have updated your version of the software you are using as well as the packages you are using to create those outputs. This can cause problems with backward dependencies if packages have not been consistent when creating their updates.
+</p>
+<p class="govuk-body">
+<span class="govuk-!-font-weight-bold">Other people at any time</span> want to take your code that you’ve shared to recreate or update the outputs that you’ve previously created. Depending on how software and package management is performed in the organisation, this group may not have the same packages installed as you did when you originally shared your script.
+</p>
+<h2 id="depend-on-code" class="govuk-heading-l">Depend on code</h2>
+<p class="govuk-body">
+When you use other people’s code, their code is called a “dependency”. It is impossible to avoid dependencies without reinventing computers from scratch. It also isn’t always obvious when your project has been affected by a change in a dependency.
+</p>
+<p class="govuk-body">
+You can mitigate the risks of having dependencies if you
+</p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+notice problems with dependencies
+</li>
+<li class="govuk-body">
+choose a few reliable dependencies
+</li>
+<li class="govuk-body">
+know about changes in advance
+</li>
+<li class="govuk-body">
+control which dependencies are installed and their versions
+</li>
+</ul>
+<p class="govuk-body">
+These topics are explained in the following sections.
+</p>
+<h2 id="notice-problems-with-dependencies" class="govuk-heading-l">Notice problems with dependencies</h2>
+<p class="govuk-body">
+Changes to dependencies might not impact your publication. If changes do have an impact, the best case is that you’ll get a helpful error message. At worst, your code will execute with an imperceptible but impactful error. Maybe a rounding function now rounds to the nearest 10 instead of the nearest 1000.
+</p>
+<p class="govuk-body">
+Here are some ways your code can be affected.
+</p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+A dependency might have a new bug
+</li>
+<li class="govuk-body">
+A dependency might break an assumption that your code made about a previous version
+</li>
+<li class="govuk-body">
+There might be a newer and better way to do what the dependency does
+</li>
+</ul>
+<p class="govuk-body">
+Problems can be compounded if your dependencies depend on other dependencies, or if two of your dependencies require conflicting versions of a third dependency. If you have to change a dependency that has its own dependencies, then you could get stuck in so-called <a href="https://en.wikipedia.org/wiki/Dependency_hell" class="govuk-link">dependency hell</a>.
+</p>
+<h2 id="choose-a-few-reliable-dependencies" class="govuk-heading-l">Choose a few reliable dependencies</h2>
+<p class="govuk-body">
+You are likely to make use of other people’s code when you develop your RAP project. Maybe you’ve imported packages to perform a statistical test, for example. These dependencies can be extremely helpful. They can:
 </p>
 <ul class="govuk=list govuk-list--bullet">
 <li class="govuk-body">
@@ -4099,25 +4189,8 @@ help to reduce the size of your scripts and make them more human-readable
 limit the need for you to update and fix problems yourself
 </li>
 </ul>
-<h3 id="limitations" class="govuk-heading-m">Limitations</h3>
 <p class="govuk-body">
-Most statistical publications are <a href="https://www.gov.uk/government/statistics/announcements" class="govuk-link">updated on a scheduled basis</a> when new data become available.
-</p>
-<p class="govuk-body">
-It’s possible that you’ll get some errors when you reuse your RAP project code for the next update, even if everything worked perfectly last time. Why? The maintainers of your dependencies may have changed the code and it no longer works as you expect.
-</p>
-<p class="govuk-body">
-Changes might not impact your publication. If changes do have an impact, the best case is that you’ll get a helpful error message. At worst, your code will execute with an imperceptible but impactful error. Maybe a rounding function now rounds to the nearest 10 instead of the nearest 1000.
-</p>
-<p class="govuk-body">
-The problem is compounded if your dependencies depend on other dependencies, or if two of your dependencies require conflicting versions of a third dependency. You could get stuck in so-called <a href="https://en.wikipedia.org/wiki/Dependency_hell" class="govuk-link">dependency hell</a>.
-</p>
-<p class="govuk-body">
-The bottom line: your publication is dependent on particular software and its state at a given time. How can you deal with this? This chapter considers a few possibilities given variation in tools, techniques and IT restrictions.
-</p>
-<h3 id="think-lightweight" class="govuk-heading-m">Think lightweight</h3>
-<p class="govuk-body">
-First, think about what you can do to reduce the chance of problems. To put it succinctly, <a href="http://www.tinyverse.org/" class="govuk-link">the tinyverse philosophy of dependency management</a> suggests that:
+You can reduce the risk of problems by only depending on a few reliable packages. To put it succinctly, the <a href="http://www.tinyverse.org/" class="govuk-link">tinyverse philosophy of dependency management</a> suggests that:
 </p>
 <div class="govuk-inset-text">
 <p class="govuk-body">
@@ -4135,63 +4208,64 @@ minimise the number of dependencies and remove redundancy where possible
 avoid depending on packages that in turn have many dependencies
 </li>
 <li class="govuk-body">
-restrict yourself to ‘stable’ packages for which recent changes were restricted to minor updates and bug-fixes
+restrict yourself to stable packages for which recent changes were restricted to minor updates and bug-fixes
 </li>
 <li class="govuk-body">
 review regularly your dependencies to establish if better alternatives exist
 </li>
+<li class="govuk-body">
+Record the packages and versions
+</li>
 </ul>
-<h3 id="record-the-packages-and-versions" class="govuk-heading-m">Record the packages and versions</h3>
 <p class="govuk-body">
-It’s not enough to simply minimise your dependencies. You need to think about how this impacts the reproducibility of your project. To ensure that your scripts are executed in the same way next time, you need to record the packages and their versions in some way. Then you or a colleague can recreate the environment in which the outputs were produced the first time round.
+It isn’t enough to merely minimise your dependencies. You need to think about how this impacts the reproducibility of your project. To ensure that your scripts are executed in the same way next time, you need to record the packages and their versions in some way. Then you or a colleague can recreate the environment in which the outputs were produced the first time round.
 </p>
-<h2 id="approaches" class="govuk-heading-l">Approaches</h2>
-<h3 id="version-numbers" class="govuk-heading-m">Version numbers</h3>
+<h2 id="know-about-changes-in-advance" class="govuk-heading-l">Know about changes in advance</h2>
+<p class="govuk-body">
+Set aside time to learn about changes to dependencies and new developments relevant to your project.
+</p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+Subscribe to alerts. This is easy to do if the dependency is hosted on GitHub or a package distribution network like CRAN or PyPi.
+</li>
+<li class="govuk-body">
+Read blog aggregators. Changes to packages are often written about in advance. By following a few blog aggregators you are likely to see relevant posts.
+</li>
+<li class="govuk-body">
+Follow developers on social media. Many developers discuss changes to their packages on social media, for example Twitter.
+</li>
+</ul>
+<p class="govuk-body">
+A side effect of these seemingly inefficient activities is that you will become better at your job. Consider contributing what you learn back to the community by posting in <a href="https://govdatascience.slack.com/messages/C6H22U3H9/" class="govuk-link">Slack</a>, peer reviewing other people’s projects, and teaching people at <a href="https://ukgovdatascience.github.io/rap-website/resource-coffee-and-coding.html" class="govuk-link">coffee and coding</a>.
+</p>
+<h2 id="control-which-dependencies-are-installed-and-their-versions" class="govuk-heading-l">Control which dependencies are installed and their versions</h2>
 <p class="govuk-body">
 Maintainers signal updates by increasing the version number of their software. This could be a simple patch of an earlier version’s bug (e.g. version 3.2.7 replaces 3.2.6), or perhaps a major breaking change (e.g. version 3.2.6 is update to version 4.0.0).
 </p>
+<h3 id="write-down-dependencies-and-their-versions" class="govuk-heading-m">Write down dependencies and their versions</h3>
 <p class="govuk-body">
-There are many ways to record each of the packages used in our analysis and their version numbers.
+There are many ways to record each of the packages used in your analysis and their version numbers.
 </p>
 <p class="govuk-body">
-In R you could, for example, use the <code>session_info()</code> function from <code>devtools</code> package. This prints details about the current state of the working environment.
+In R you could, for example, use the <code>session_info()</code> function from the devtools package. This prints details about the current state of the working environment.
 </p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">session_info</span>()</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>─ Session info ─────────────────────────────────────────
-setting  value
-version  R version 3.5.2 (2018-12-20)
-os       macOS High Sierra 10.13.6
-system   x86_64, darwin15.6.0
-ui       RStudio
-language (EN)
-collate  en_GB.UTF-8
-ctype    en_GB.UTF-8
-tz       Europe/London
-date     2019-03-01
-
-─ Packages ────────────────────────────────────────────
-package     * version    date       lib source
-assertthat    0.2.0      2017-04-11 [1] CRAN (R 3.5.0)
-backports     1.1.3      2018-12-14 [1] CRAN (R 3.5.0)
-bookdown      0.7        2018-02-18 [1] CRAN (R 3.5.0)
-callr         3.1.1      2018-12-21 [1] CRAN (R 3.5.0)
-...</code></pre>
 <p class="govuk-body">
 You could do something like <code>pkgs &lt;- devtools::session_info()$packages</code> to save a dataframe of the packages and versions.
 </p>
 <p class="govuk-body">
 You can achieve a similar thing for Python with <code>pip freeze</code> in a shell script.
 </p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">pip</span> freeze</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## alabaster==0.7.10
-## anaconda-client==1.6.14
-## anaconda-navigator==1.8.7
-## anaconda-project==0.8.2
-## appnope==0.1.0
-## appscript==1.0.1
-...</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="op">&gt;</span> <span class="ex">pip</span> freeze</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">## alabaster==0.7.10</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">## anaconda-client==1.6.14</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">## anaconda-navigator==1.8.7</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">## anaconda-project==0.8.2</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">## appnope==0.1.0</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">## appscript==1.0.1</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="ex">...</span></a></code></pre></div>
 <p class="govuk-body">
-You can save this information with something like <code>pip freeze &gt; requirements.txt</code> in the shell. The packages should be ‘pinned’ to specific versions, meaning that they’re in the form <code>packageName==1.3.2</code> rather than <code>packageName&gt;=1.3.2</code>. We’re interested in storing specific versions, not specific versions or newer.
+You can save this information with something like <code>pip freeze &gt; requirements.txt</code> in the shell. The packages should be ‘pinned’ to specific versions, meaning that they’re in the form <code>packageName==1.3.2</code> rather than <code>packageName&gt;=1.3.2</code>. The point is to record specific versions, not specific versions or newer.
 </p>
 <p class="govuk-body">
 But simply saving this information in your project folder isn’t good dependency control. It:
@@ -4207,19 +4281,25 @@ records every package and its version on your whole system, not just the ones re
 isn’t a reproducible or automated process
 </li>
 </ul>
-<h3 id="environments-for-dependency-management" class="govuk-heading-m">Environments for dependency management</h3>
 <p class="govuk-body">
-Ideally we want to automate the process of recording packages and their version numbers and have them installed in an isolated environment that’s specific to our project. Doing this makes the project more portable – you could run it easily from another machine that’s configured differently to your own – and it would therefore be more reproducible.
+The following sections explain how to use a list of dependencies more effectively.
 </p>
-<h4 id="package-managers-in-r" class="govuk-heading-s">Package managers in R</h4>
+<h2 id="control-which-dependencies-are-installed-and-their-versions-1" class="govuk-heading-l">Control which dependencies are installed and their versions</h2>
+<p class="govuk-body">
+Ideally you should automate the process of recording packages and their version numbers and have them installed in an isolated environment that’s specific to your project. Doing this makes the project more portable – you could run it easily from another machine that’s configured differently to your own – and it would therefore be more reproducible.
+</p>
+<h3 id="package-managers-in-r" class="govuk-heading-m">Package managers in R</h3>
 <p class="govuk-body">
 There is currently no consensus approach for package management in R. Below are a few options, but this is a non-exhaustive list.
 </p>
 <p class="govuk-body">
-The <a href="https://rstudio.github.io/packrat/" class="govuk-link"><code>packrat</code> package</a> is commonly used but <a href="https://rstudio.github.io/packrat/limitations.html" class="govuk-link">has known issues</a>. The RAP community has noted in particular that it has a problem compiling older package versions on Windows. <a href="https://github.com/ukgovdatascience/rap_companion/issues/86" class="govuk-link">Join the discussion for more information</a>.
+The <a href="https://rstudio.github.io/renv/" class="govuk-link">renv</a> package is the newest package manager from RStudio. It is introduced briefly in the next section.
 </p>
 <p class="govuk-body">
-<a href="https://rstudio.github.io/packrat/walkthrough.html" class="govuk-link">A <code>packrat</code> walkthrough is available</a>, but the basic process is:
+The <a href="https://rstudio.github.io/packrat/" class="govuk-link">packrat package</a> is commonly used but <a href="https://rstudio.github.io/packrat/limitations.html" class="govuk-link">has known problems</a>. The RAP community has noted in particular that it has a problem compiling older package versions on Windows. <a href="https://github.com/ukgovdatascience/rap_companion/issues/86" class="govuk-link">Join the discussion for more information</a>.
+</p>
+<p class="govuk-body">
+<a href="https://rstudio.github.io/packrat/walkthrough.html" class="govuk-link">A packrat walkthrough is available</a>, but the basic process is:
 </p>
 <ol class="govuk-list govuk-list--number">
 <li class="govuk-body">
@@ -4236,35 +4316,78 @@ When opening the project fresh on a new machine, Packrat automates the process o
 </li>
 </ol>
 <p class="govuk-body">
-As for other options, <a href="https://github.com/RevolutionAnalytics/checkpoint/wiki" class="govuk-link">the <code>checkpoint</code> package</a> from Microsoft’s Revolution Analytics works like <code>packrat</code> but you simply <code>checkpoint()</code> your project for a given date. This allows you to call the packages from that date into a private library for that project. It works by fetching the packages from the <a href="https://mran.microsoft.com/" class="govuk-link">Microsoft R Application Network (MRAN)</a>, which is a daily snapshot of <a href="https://cran.r-project.org/" class="govuk-link">CRAN</a>. Note that this doesn’t permit control of packages that are hosted anywhere other than CRAN, such as Bioconductor or GitHub, and relies on Microsoft continuing to snapshot and store CRAN copies in MRAN.
+As for other options, <a href="https://github.com/RevolutionAnalytics/checkpoint/wiki" class="govuk-link">the checkpoint package</a> from Microsoft’s Revolution Analytics works like packrat but you simply <code>checkpoint()</code> your project for a given date. This allows you to call the packages from that date into a private library for that project. It works by fetching the packages from the <a href="https://mran.microsoft.com/" class="govuk-link">Microsoft R Application Network (MRAN)</a>, which is a daily snapshot of <a href="https://cran.r-project.org/" class="govuk-link">CRAN</a>. Note that this doesn’t permit control of packages that are hosted anywhere other than CRAN, such as Bioconductor or GitHub, and relies on Microsoft continuing to snapshot and store CRAN copies in MRAN.
 </p>
 <p class="govuk-body">
-Another option is <code>jetpack</code>, which is different to <code>packrat</code> because it uses a DESCRIPTION file to list your dependencies. <a href="http://r-pkgs.had.co.nz/description.html" class="govuk-link">DESCRIPTION files are used in package development</a> to store information, including that package’s dependencies. This is a lightweight option and can be run from the command line.
+Another option is jetpack, which is different to packrat because it uses a DESCRIPTION file to list your dependencies. <a href="http://r-pkgs.had.co.nz/description.html" class="govuk-link">DESCRIPTION files are used in package development</a> to store information, including that package’s dependencies. This is a lightweight option and can be run from the command line.
 </p>
 <p class="govuk-body">
 Paid options also exist, but are obviously less accessible and require maintenance. One example is <a href="https://www.rstudio.com/products/package-manager/" class="govuk-link">RStudio’s Package Manager</a>.
 </p>
-<h4 id="virtual-environments-in-python" class="govuk-heading-s">Virtual environments in Python</h4>
+<h3 id="r-package-renv" class="govuk-heading-m">R package {renv}</h3>
 <p class="govuk-body">
-In Python we can easily create an isolated environment for our project and load packages into it. This is possible with tools like <a href="https://docs.python-guide.org/dev/virtualenvs/" class="govuk-link"><code>virtualenv</code> and <code>Pipenv</code></a>.
+In R, it is possible to manage your packages without a centralised organisational level package management systems. The renv package supports this.
 </p>
 <p class="govuk-body">
-You can set up a virtual environment in your project folder, activate it, install any packages you need and then record them in a file for use in future. One way to do this is with <code>virtualenv</code>. After installation and having navigated to your project’s home folder, you can follow something like this from the command line:
+The approach renv takes to package updates is:
 </p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">virtualenv</span> venv  # create virtual environment folder</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="bu">source</span> venv/bin/activate  # activate the environment</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="ex">pip</span> install packageName  # install packages you need</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt  # save package-version list</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="ex">deactivate</span>  # deactivate the environment when done</a></code></pre></div>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+Isolate a project
+</li>
+<li class="govuk-body">
+Record the current dependencies
+</li>
+<li class="govuk-body">
+Upgrade packages
+</li>
+</ul>
+<p class="govuk-body">
+This “snapshot and restore” approach can also be used to promote content to production. In fact, this approach is exactly how RStudio Connect and shinyapps.io deploy thousands of R applications to production each day.
+</p>
+<p class="govuk-body">
+<span class="govuk-!-font-weight-bold">Isolate the project</span> from within the project directory by using the code
+</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">renv<span class="op">::</span><span class="kw">init</span>()</a></code></pre></div>
+<p class="govuk-body">
+<span class="govuk-!-font-weight-bold">Record the current dependencies</span> by using the following code. This step is important because if the updates go pear-shaped, you will have a point you can revert back to.
+</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># record the current dependencies in a file called renv.lock</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">renv<span class="op">::</span><span class="kw">snapshot</span>()</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co"># commit the lockfile alongside your code in version control</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># and use this function to view the history of your lockfile</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">renv<span class="op">::</span><span class="kw">history</span>()</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co"># if an upgrade goes astray, revert the lockfile</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">renv<span class="op">::</span><span class="kw">revert</span>(<span class="dt">commit =</span> <span class="st">&quot;abc123&quot;</span>)</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co"># and restore the previous environment</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">renv<span class="op">::</span><span class="kw">restore</span>()</a></code></pre></div>
+<p class="govuk-body">
+Upgrade packages in whichever way you normally do. One method is using the <a href="https://pak.r-lib.org/" class="govuk-link">pak</a> package:
+</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">pak<span class="op">::</span><span class="kw">pkg_install</span>(<span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
+<h3 id="virtual-environments-in-python" class="govuk-heading-m">Virtual environments in Python</h3>
+<p class="govuk-body">
+In Python you can create an isolated environment for your project and load packages into it. This is possible with tools like <a href="https://docs.python-guide.org/dev/virtualenvs/" class="govuk-link">virtualenv and pipenv</a>.
+</p>
+<p class="govuk-body">
+You can set up a virtual environment in your project folder, activate it, install any packages you need and then record them in a file for use in future. One way to do this is with virtualenv. After installation and having navigated to your project’s home folder, you can follow something like this from the command line:
+</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">virtualenv</span> venv  # create virtual environment folder</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="bu">source</span> venv/bin/activate  # activate the environment</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="ex">pip</span> install packageName  # install packages you need</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt  # save package-version list</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="ex">deactivate</span>  # deactivate the environment when done</a></code></pre></div>
 <p class="govuk-body">
 When another user downloads your version-controlled project folder, the requirements.txt file will be there. Now they can create a virtual environment on their machine following steps 1 to 3 above, but rather than <code>pip install packageName</code> for each package they need, they can automate the process by installing everything from the requirements.txt file with:
 </p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">pip</span> install -r requirements.txt</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="ex">pip</span> install -r requirements.txt</a></code></pre></div>
 <p class="govuk-body">
 This will download the packages one by one into the virtual environment in their copy of the project virtual environment. Now they’ll be using the same packages you were when you developed your project.
 </p>
 <h2 id="containers" class="govuk-heading-l">Containers</h2>
-<h3 id="theory" class="govuk-heading-m">Theory</h3>
 <p class="govuk-body">
 Good package management deals with one of the major problems of dependency hell. But the problem is bigger. Collaborators could still encounter errors if they:
 </p>
@@ -4297,14 +4420,11 @@ can be transported by various transport methods
 </li>
 </ul>
 <p class="govuk-body">
-This is what we want for our project as well. We want to put whatever we want inside, we want it to be isolated and we want to be able to run it from anywhere.
+This is desirable for projects as well. You can put whatever you want inside, isolate it, and be able to run it from anywhere.
 </p>
 <h3 id="docker" class="govuk-heading-m">Docker</h3>
 <p class="govuk-body">
-Docker can seem daunting at first.
-</p>
-<p class="govuk-body">
-It works like this:
+Docker is a container system. It works like this:
 </p>
 <ol class="govuk-list govuk-list--number">
 <li class="govuk-body">
@@ -4320,7 +4440,6 @@ Other people can follow the dockerfile recipe to make their own copies of the de
 <p class="govuk-body">
 You can learn more about this process by <a href="https://docker-curriculum.com/" class="govuk-link">following the curriculum on Docker’s website</a>. You can also read about the use of Docker <a href="https://dwpdigital.blog.gov.uk/2018/05/18/using-containers-to-deliver-our-data-projects/" class="govuk-link">in the Department for Work and Pensions</a> (DWP). Phil Chapman <a href="https://chapmandu2.github.io/post/2018/05/26/reproducible-data-science-environments-with-docker/" class="govuk-link">wrote more about the technical side of this process</a>.
 </p>
-<h3 id="making-it-easier" class="govuk-heading-m">Making it easier</h3>
 <p class="govuk-body">
 You don’t have to build everything from scratch. <a href="https://hub.docker.com/" class="govuk-link">Docker hub</a> is a big library of pre-prepared container images. For example, the <a href="https://hub.docker.com/u/rocker" class="govuk-link">rocker project on Docker hub</a> lists a number of images containing R-specific tools like <a href="https://hub.docker.com/r/rocker/tidyverse" class="govuk-link">rocker/tidyverse</a> that contains R, RStudio and <a href="https://tidyverse.tidyverse.org/" class="govuk-link">the tidyverse packages</a>. You can specify a rocker image in your dockerfile to make your life easier. Learn more about <a href="http://ropenscilabs.github.io/r-docker-tutorial/" class="govuk-link">rOpenSci labs tutorial</a>
 </p>
