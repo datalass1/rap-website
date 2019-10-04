@@ -39,17 +39,19 @@ font-family: sans-serif;
 .govuk-link {
 font-family: sans-serif; } }
 .govuk-link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-link:link {
-color: #005ea5; }
+color: #1d70b8; }
 .govuk-link:visited {
 color: #4c2c92; }
 .govuk-link:hover {
-color: #2b8cc4; }
+color: #003078; }
 .govuk-link:active {
-color: #2b8cc4; }
+color: #0b0c0c; }
 .govuk-link:focus {
 color: #0b0c0c; }
 @media print {
@@ -67,13 +69,13 @@ color: #0b0c0c; }
 .govuk-link--text-colour:link, .govuk-link--text-colour:visited, .govuk-link--text-colour:hover, .govuk-link--text-colour:active, .govuk-link--text-colour:focus {
 color: #000000; } }
 .govuk-link--no-visited-state:link {
-color: #005ea5; }
+color: #1d70b8; }
 .govuk-link--no-visited-state:visited {
-color: #005ea5; }
+color: #1d70b8; }
 .govuk-link--no-visited-state:hover {
-color: #2b8cc4; }
+color: #003078; }
 .govuk-link--no-visited-state:active {
-color: #2b8cc4; }
+color: #0b0c0c; }
 .govuk-link--no-visited-state:focus {
 color: #0b0c0c; }
 .govuk-list {
@@ -125,7 +127,7 @@ margin-bottom: 0; }
 .govuk-list--number > li {
 margin-bottom: 5px; } }
 .govuk-template {
-background-color: #dee0e2;
+background-color: #f3f2f1;
 -webkit-text-size-adjust: 100%;
 -moz-text-size-adjust: 100%;
 -ms-text-size-adjust: 100%;
@@ -505,7 +507,7 @@ margin-top: 20px; } }
 .govuk-section-break--m {
 margin-bottom: 20px; } }
 .govuk-section-break--visible {
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 .govuk-form-group {
 margin-bottom: 20px; }
 .govuk-form-group:after {
@@ -519,7 +521,7 @@ margin-bottom: 30px; } }
 margin-bottom: 0; }
 .govuk-form-group--error {
 padding-left: 15px;
-border-left: 5px solid #b10e1e; }
+border-left: 5px solid #d4351c; }
 .govuk-form-group--error .govuk-form-group {
 padding: 0;
 border: 0; }
@@ -628,9 +630,11 @@ padding-bottom: 20px; }
 .govuk-main-wrapper {
 padding-top: 40px;
 padding-bottom: 40px; } }
+.govuk-main-wrapper--auto-spacing:first-child,
 .govuk-main-wrapper--l {
 padding-top: 30px; }
 @media (min-width: 40.0625em) {
+.govuk-main-wrapper--auto-spacing:first-child,
 .govuk-main-wrapper--l {
 padding-top: 50px; } }
 .govuk-width-container {
@@ -661,6 +665,7 @@ margin-bottom: 30px; } }
 .govuk-accordion__section {
 padding-top: 15px; }
 .govuk-accordion__section-header {
+padding-top: 15px;
 padding-bottom: 15px; }
 .govuk-accordion__section-heading {
 margin-top: 0;
@@ -694,10 +699,9 @@ margin-bottom: 0; }
 .govuk-accordion__section-content > :last-child {
 margin-bottom: 0; }
 .js-enabled .govuk-accordion {
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 .js-enabled .govuk-accordion__section {
-padding-top: 0;
-border-top: 1px solid #bfc1c3; }
+padding-top: 0; }
 .js-enabled .govuk-accordion__section-content {
 display: none;
 padding-top: 15px;
@@ -718,14 +722,18 @@ font-weight: 400;
 font-size: 14px;
 font-size: 0.875rem;
 line-height: 1.1428571429;
+position: relative;
+z-index: 1;
+margin: 0;
+padding: 0;
+border-width: 0;
+color: #1d70b8;
+background: none;
+cursor: pointer;
+-webkit-appearance: none;
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-display: inline;
-border-width: 0;
-color: #005ea5;
-background: none;
-cursor: pointer; }
+-moz-osx-font-smoothing: grayscale; }
 @media print {
 .js-enabled .govuk-accordion__open-all {
 font-family: sans-serif; } }
@@ -742,49 +750,60 @@ line-height: 1.2; } }
 .js-enabled .govuk-accordion__open-all {
 font-family: sans-serif; } }
 .js-enabled .govuk-accordion__open-all:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
+.js-enabled .govuk-accordion__open-all:link {
+color: #1d70b8; }
+.js-enabled .govuk-accordion__open-all:visited {
+color: #4c2c92; }
+.js-enabled .govuk-accordion__open-all:hover {
+color: #003078; }
+.js-enabled .govuk-accordion__open-all:active {
+color: #0b0c0c; }
 .js-enabled .govuk-accordion__open-all:focus {
-background: none; }
+color: #0b0c0c; }
+.js-enabled .govuk-accordion__open-all::-moz-focus-inner {
+padding: 0;
+border: 0; }
 .js-enabled .govuk-accordion__section-header {
 position: relative;
 padding-right: 40px;
+border-top: 1px solid #b1b4b6;
+color: #1d70b8;
 cursor: pointer; }
-.js-enabled .govuk-accordion__section-header:hover {
-background-color: #f8f8f8; }
 @media (hover: none) {
 .js-enabled .govuk-accordion__section-header:hover {
-background-color: initial; } }
-.js-enabled .govuk-accordion__section-header--focused {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+border-top-color: #1d70b8;
+box-shadow: inset 0 3px 0 0 #1d70b8; } }
 .js-enabled .govuk-accordion__section-button {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
-width: 100%;
 margin-top: 0;
 margin-bottom: 0;
 margin-left: 0;
-padding-top: 15px;
-padding-bottom: 0;
-padding-left: 0;
+padding: 0;
 border-width: 0;
-color: #005ea5;
+color: inherit;
 background: none;
 text-align: left;
-cursor: pointer; }
+cursor: pointer;
+-webkit-appearance: none; }
 @media print {
 .js-enabled .govuk-accordion__section-button {
 font-family: sans-serif; } }
 .js-enabled .govuk-accordion__section-button:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
-.js-enabled .govuk-accordion__section-button:focus {
-outline: none;
-background: none; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
+.js-enabled .govuk-accordion__section-button::-moz-focus-inner {
+padding: 0;
+border: 0; }
 .js-enabled .govuk-accordion__section-button:after {
 content: "";
 position: absolute;
@@ -792,6 +811,11 @@ top: 0;
 right: 0;
 bottom: 0;
 left: 0; }
+.js-enabled .govuk-accordion__section-button:hover:not(:focus) {
+text-decoration: underline; }
+@media (hover: none) {
+.js-enabled .govuk-accordion__section-button:hover {
+text-decoration: none; } }
 .js-enabled .govuk-accordion__controls {
 text-align: right; }
 .js-enabled .govuk-accordion__icon {
@@ -849,14 +873,18 @@ line-height: 1.2; } }
 .govuk-back-link {
 font-family: sans-serif; } }
 .govuk-back-link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-back-link:link, .govuk-back-link:visited, .govuk-back-link:hover, .govuk-back-link:active, .govuk-back-link:focus {
 color: #0b0c0c; }
 @media print {
 .govuk-back-link:link, .govuk-back-link:visited, .govuk-back-link:hover, .govuk-back-link:active, .govuk-back-link:focus {
 color: #000000; } }
+.govuk-back-link:focus {
+border-bottom-color: transparent; }
 .govuk-back-link:before {
 display: block;
 width: 0;
@@ -869,13 +897,10 @@ border-width: 5px 6px 5px 0;
 border-right-color: inherit;
 content: "";
 position: absolute;
-top: -1px;
-bottom: 1px;
+top: 0;
+bottom: 0;
 left: 0;
 margin: auto; }
-.govuk-back-link:before {
-top: -1px;
-bottom: 1px; }
 .govuk-breadcrumbs {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -921,8 +946,8 @@ float: left; }
 content: "";
 display: block;
 position: absolute;
-top: -1px;
-bottom: 1px;
+top: 0;
+bottom: 0;
 left: -3.31px;
 width: 7px;
 height: 7px;
@@ -947,9 +972,11 @@ font-family: sans-serif;
 .govuk-breadcrumbs__link {
 font-family: sans-serif; } }
 .govuk-breadcrumbs__link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-breadcrumbs__link:link, .govuk-breadcrumbs__link:visited, .govuk-breadcrumbs__link:hover, .govuk-breadcrumbs__link:active, .govuk-breadcrumbs__link:focus {
 color: #0b0c0c; }
 @media print {
@@ -969,12 +996,12 @@ position: relative;
 width: 100%;
 margin-top: 0;
 margin-bottom: 22px;
-padding: 7px 10px;
+padding: 8px 10px 7px;
 border: 2px solid transparent;
 border-radius: 0;
 color: #ffffff;
-background-color: #00823b;
-box-shadow: 0 2px 0 #003418;
+background-color: #00703c;
+box-shadow: 0 2px 0 #002d18;
 text-align: center;
 vertical-align: top;
 cursor: pointer;
@@ -991,9 +1018,6 @@ line-height: 1; } }
 .govuk-button {
 font-size: 14pt;
 line-height: 19px; } }
-.govuk-button:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
 @media (min-width: 40.0625em) {
 .govuk-button {
 margin-bottom: 32px; } }
@@ -1006,11 +1030,19 @@ text-decoration: none; }
 .govuk-button::-moz-focus-inner {
 padding: 0;
 border: 0; }
-.govuk-button:hover, .govuk-button:focus {
-background-color: #00682f; }
+.govuk-button:hover {
+background-color: #005a30; }
 .govuk-button:active {
-top: 2px;
-box-shadow: none; }
+top: 2px; }
+.govuk-button:focus {
+border-color: #ffdd00;
+outline: 3px solid transparent;
+box-shadow: inset 0 0 0 1px #ffdd00; }
+.govuk-button:focus:not(:active):not(:hover) {
+border-color: #ffdd00;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 2px 0 #0b0c0c; }
 .govuk-button::before {
 content: "";
 display: block;
@@ -1029,7 +1061,7 @@ opacity: 0.5; }
 .govuk-button--disabled:hover,
 .govuk-button[disabled="disabled"]:hover,
 .govuk-button[disabled]:hover {
-background-color: #00823b;
+background-color: #00703c;
 cursor: default; }
 .govuk-button--disabled:focus,
 .govuk-button[disabled="disabled"]:focus,
@@ -1039,38 +1071,39 @@ outline: none; }
 .govuk-button[disabled="disabled"]:active,
 .govuk-button[disabled]:active {
 top: 0;
-box-shadow: 0 2px 0 #003418; }
+box-shadow: 0 2px 0 #002d18; }
 .govuk-button--secondary {
-background-color: #dee0e2;
-box-shadow: 0 2px 0 #858688; }
+background-color: #f3f2f1;
+box-shadow: 0 2px 0 #929191; }
 .govuk-button--secondary, .govuk-button--secondary:link, .govuk-button--secondary:visited, .govuk-button--secondary:active, .govuk-button--secondary:hover {
 color: #0b0c0c; }
-.govuk-button--secondary:hover, .govuk-button--secondary:focus {
-background-color: #c8cacb; }
-.govuk-button--secondary:hover[disabled], .govuk-button--secondary:focus[disabled] {
-background-color: #dee0e2; }
+.govuk-button--secondary:hover {
+background-color: #dbdad9; }
+.govuk-button--secondary:hover[disabled] {
+background-color: #f3f2f1; }
 .govuk-button--warning {
-background-color: #b10e1e;
-box-shadow: 0 2px 0 #47060c; }
+background-color: #d4351c;
+box-shadow: 0 2px 0 #55150b; }
 .govuk-button--warning, .govuk-button--warning:link, .govuk-button--warning:visited, .govuk-button--warning:active, .govuk-button--warning:hover {
 color: #ffffff; }
-.govuk-button--warning:hover, .govuk-button--warning:focus {
-background-color: #8e0b18; }
-.govuk-button--warning:hover[disabled], .govuk-button--warning:focus[disabled] {
-background-color: #b10e1e; }
+.govuk-button--warning:hover {
+background-color: #aa2a16; }
+.govuk-button--warning:hover[disabled] {
+background-color: #d4351c; }
 .govuk-button--start {
 font-weight: 700;
 font-size: 18px;
 font-size: 1.125rem;
 line-height: 1;
+display: -webkit-inline-box;
+display: -webkit-inline-flex;
+display: -ms-inline-flexbox;
+display: inline-flex;
 min-height: auto;
-padding-top: 8px;
-padding-right: 40px;
-padding-bottom: 8px;
-padding-left: 15px;
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAATCAMAAACwcE1OAAAAJFBMVEX///////////////////////////////////////8AAAD///8l0tt6AAAAC3RSTlNwj+5IYDChUKCAAJvFEkYAAABPSURBVHjadclJDoAwDAPAsKaY//8XBbXywfFcJ8ZbTvQC/Lbnb6bXD9N803xtfW2+tr429v9d513CdD4lIW2WzdWWleZqrz3Q9twLfXM7HzwAFbthf/TFAAAAAElFTkSuQmCC);
-background-repeat: no-repeat;
-background-position: 100% 50%; }
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+-ms-flex-pack: center;
+justify-content: center; }
 @media (min-width: 40.0625em) {
 .govuk-button--start {
 font-size: 24px;
@@ -1080,16 +1113,18 @@ line-height: 1; } }
 .govuk-button--start {
 font-size: 18pt;
 line-height: 1; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-.govuk-button--start {
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAmCAMAAACvbwi9AAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMAmWCfOe+PMB0mUKNaVuIAAAA5SURBVHgBY2DmhgNWdgYSwTDRzUWJbm6mUd2jukd1E8hjdNXMxIgALKN6QWBU76heNk4K9HKMAL0AqfELJxFKuhEAAAAASUVORK5CYII=);
-background-size: 30px 19px; } }
-.govuk-button {
-padding-top: 9px;
-padding-bottom: 6px; }
-.govuk-button--start {
-padding-top: 9px;
-padding-bottom: 6px; }
+.govuk-button__start-icon {
+margin-left: 5px;
+vertical-align: middle;
+-webkit-flex-shrink: 0;
+-ms-flex-negative: 0;
+flex-shrink: 0;
+-webkit-align-self: center;
+-ms-flex-item-align: center;
+align-self: center; }
+@media (min-width: 48.0625em) {
+.govuk-button__start-icon {
+margin-left: 10px; } }
 .govuk-error-message {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1101,7 +1136,7 @@ line-height: 1.25;
 display: block;
 margin-bottom: 15px;
 clear: both;
-color: #b10e1e; }
+color: #d4351c; }
 @media print {
 .govuk-error-message {
 font-family: sans-serif; } }
@@ -1141,7 +1176,6 @@ display: table;
 max-width: 100%;
 margin-bottom: 10px;
 padding: 0;
-overflow: hidden;
 white-space: normal; }
 @media print {
 .govuk-fieldset__legend {
@@ -1462,9 +1496,8 @@ display: block;
 padding-right: 15px;
 padding-left: 15px; }
 .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-outline: 3px solid transparent;
-outline-offset: 3px;
-box-shadow: 0 0 0 3px #ffbf47; }
+border-width: 4px;
+box-shadow: 0 0 0 3px #ffdd00; }
 .govuk-checkboxes__input:checked + .govuk-checkboxes__label::after {
 opacity: 1; }
 .govuk-checkboxes__input:disabled,
@@ -1476,7 +1509,7 @@ opacity: .5; }
 margin-bottom: 15px;
 margin-left: 18px;
 padding-left: 33px;
-border-left: 4px solid #bfc1c3; }
+border-left: 4px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-checkboxes__conditional {
 margin-bottom: 20px; } }
@@ -1520,14 +1553,14 @@ margin-left: 10px;
 padding-left: 20px;
 clear: both; }
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label::before {
-box-shadow: 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 10px #b1b4b6; }
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-box-shadow: 0 0 0 3px #ffbf47, 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 3px #ffdd00, 0 0 0 10px #b1b4b6; }
 @media (hover: none), (pointer: coarse) {
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label::before {
 box-shadow: initial; }
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-box-shadow: 0 0 0 3px #ffbf47; } }
+box-shadow: 0 0 0 3px #ffdd00; } }
 .govuk-character-count {
 margin-bottom: 20px; }
 @media (min-width: 40.0625em) {
@@ -1580,7 +1613,7 @@ margin-bottom: 30px; } }
 @media (max-width: 40.0525em) {
 .govuk-summary-list__row {
 margin-bottom: 15px;
-border-bottom: 1px solid #bfc1c3; } }
+border-bottom: 1px solid #b1b4b6; } }
 @media (min-width: 40.0625em) {
 .govuk-summary-list__row {
 display: table-row; } }
@@ -1600,7 +1633,7 @@ padding-right: 20px; } }
 .govuk-summary-list__actions {
 padding-top: 10px;
 padding-bottom: 10px;
-border-bottom: 1px solid #bfc1c3; } }
+border-bottom: 1px solid #b1b4b6; } }
 .govuk-summary-list__actions {
 margin-bottom: 15px; }
 @media (min-width: 40.0625em) {
@@ -1640,7 +1673,7 @@ display: inline;
 margin-right: 10px;
 padding-right: 10px; }
 .govuk-summary-list__actions-list-item:not(:last-child) {
-border-right: 1px solid #bfc1c3; }
+border-right: 1px solid #b1b4b6; }
 .govuk-summary-list__actions-list-item:last-child {
 margin-right: 0;
 padding-right: 0;
@@ -1694,8 +1727,9 @@ line-height: 1.3157894737; } }
 font-size: 14pt;
 line-height: 1.15; } }
 .govuk-input:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+outline: 3px solid #ffdd00;
+outline-offset: 0;
+box-shadow: inset 0 0 0 2px; }
 .govuk-input::-webkit-outer-spin-button,
 .govuk-input::-webkit-inner-spin-button {
 margin: 0;
@@ -1703,7 +1737,10 @@ margin: 0;
 .govuk-input[type="number"] {
 -moz-appearance: textfield; }
 .govuk-input--error {
-border: 4px solid #b10e1e; }
+border: 4px solid #d4351c; }
+.govuk-input--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-input--width-30 {
 max-width: 59ex; }
 .govuk-input--width-20 {
@@ -1766,23 +1803,26 @@ display: inline-block;
 position: relative;
 margin-bottom: 5px;
 padding-left: 25px;
-color: #005ea5;
+color: #1d70b8;
 cursor: pointer; }
+.govuk-details__summary:hover {
+color: #003078; }
+.govuk-details__summary:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-details__summary-text {
 text-decoration: underline; }
-.govuk-details__summary:hover {
-color: #2b8cc4; }
-.govuk-details__summary:focus {
-outline: 4px solid #ffbf47;
-outline-offset: -1px;
-color: #0b0c0c;
-background: #ffbf47; }
+.govuk-details__summary:focus .govuk-details__summary-text {
+text-decoration: none; }
 .govuk-details__summary::-webkit-details-marker {
 display: none; }
 .govuk-details__summary:before {
 content: "";
 position: absolute;
-top: 0;
+top: -1px;
 bottom: 0;
 left: 0;
 margin: auto;
@@ -1808,7 +1848,7 @@ border-top-color: inherit; }
 .govuk-details__text {
 padding: 15px;
 padding-left: 20px;
-border-left: 5px solid #bfc1c3; }
+border-left: 5px solid #b1b4b6; }
 .govuk-details__text p {
 margin-top: 0;
 margin-bottom: 20px; }
@@ -1818,7 +1858,7 @@ margin-bottom: 0; }
 color: #0b0c0c;
 padding: 15px;
 margin-bottom: 30px;
-border: 4px solid #b10e1e; }
+border: 5px solid #d4351c; }
 @media print {
 .govuk-error-summary {
 color: #000000; } }
@@ -1829,11 +1869,7 @@ padding: 20px; } }
 .govuk-error-summary {
 margin-bottom: 50px; } }
 .govuk-error-summary:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
-@media (min-width: 40.0625em) {
-.govuk-error-summary {
-border: 5px solid #b10e1e; } }
+outline: 3px solid #ffdd00; }
 .govuk-error-summary__title {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1890,14 +1926,14 @@ margin-top: 0;
 margin-bottom: 0; }
 .govuk-error-summary__list a {
 font-weight: 700; }
-.govuk-error-summary__list a:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
 .govuk-error-summary__list a:link, .govuk-error-summary__list a:visited, .govuk-error-summary__list a:hover, .govuk-error-summary__list a:active {
-color: #b10e1e; }
+color: #d4351c; }
 .govuk-error-summary__list a:focus {
-color: #0b0c0c; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-file-upload {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1906,7 +1942,9 @@ font-weight: 400;
 font-size: 16px;
 font-size: 1rem;
 line-height: 1.25;
-color: #0b0c0c; }
+color: #0b0c0c;
+padding-top: 5px;
+padding-bottom: 5px; }
 @media print {
 .govuk-file-upload {
 font-family: sans-serif; } }
@@ -1923,10 +1961,31 @@ line-height: 1.15; } }
 .govuk-file-upload {
 color: #000000; } }
 .govuk-file-upload:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+margin-right: -5px;
+margin-left: -5px;
+padding-right: 5px;
+padding-left: 5px;
+outline: 3px solid #ffdd00;
+box-shadow: inset 0 0 0 4px #0b0c0c; }
+.govuk-file-upload:focus-within {
+margin-right: -5px;
+margin-left: -5px;
+padding-right: 5px;
+padding-left: 5px;
+outline: 3px solid #ffdd00;
+box-shadow: inset 0 0 0 4px #0b0c0c; }
 .govuk-file-upload--error {
-border: 4px solid #b10e1e; }
+margin-right: -5px;
+margin-left: -5px;
+padding-right: 5px;
+padding-left: 5px;
+border: 4px solid #d4351c; }
+.govuk-file-upload--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
+.govuk-file-upload--error:focus-within {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-footer {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1937,9 +1996,9 @@ font-size: 0.875rem;
 line-height: 1.1428571429;
 padding-top: 25px;
 padding-bottom: 15px;
-border-top: 1px solid #a1acb2;
-color: #454a4c;
-background: #dee0e2; }
+border-top: 1px solid #b1b4b6;
+color: #0b0c0c;
+background: #f3f2f1; }
 @media print {
 .govuk-footer {
 font-family: sans-serif; } }
@@ -1958,21 +2017,26 @@ padding-top: 40px; } }
 @media (min-width: 40.0625em) {
 .govuk-footer {
 padding-bottom: 25px; } }
-.govuk-footer__link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
-.govuk-footer__link:link, .govuk-footer__link:visited {
-color: #454a4c; }
-.govuk-footer__link:hover, .govuk-footer__link:active {
-color: #171819; }
-.govuk-footer__link:focus {
+.govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
 color: #0b0c0c; }
+.govuk-footer__link:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
+.govuk-footer__inline-list .govuk-footer__link,
+.govuk-footer__list .govuk-footer__link {
+text-decoration: none; }
+.govuk-footer__inline-list .govuk-footer__link:hover:not(:focus), .govuk-footer__inline-list .govuk-footer__link:active:not(:focus),
+.govuk-footer__list .govuk-footer__link:hover:not(:focus),
+.govuk-footer__list .govuk-footer__link:active:not(:focus) {
+text-decoration: underline; }
 .govuk-footer__section-break {
 margin: 0;
 margin-bottom: 30px;
 border: 0;
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-footer__section-break {
 margin-bottom: 50px; } }
@@ -2044,7 +2108,7 @@ margin-bottom: 5px; }
 .govuk-footer__heading {
 margin-bottom: 25px;
 padding-bottom: 20px;
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-footer__heading {
 margin-bottom: 40px; } }
@@ -2080,7 +2144,7 @@ flex-shrink: 1; }
 -ms-flex-preferred-size: 200px;
 flex-basis: 200px; } }
 @media (min-width: 48.0625em) {
-.govuk-footer__section:first-child {
+.govuk-footer__section:first-child:nth-last-child(2) {
 -webkit-box-flex: 2;
 -webkit-flex-grow: 2;
 -ms-flex-positive: 2;
@@ -2133,14 +2197,14 @@ font-size: 14pt;
 line-height: 1.2; } }
 .govuk-header__container--full-width {
 padding: 0 15px;
-border-color: #005ea5; }
+border-color: #1d70b8; }
 .govuk-header__container--full-width .govuk-header__menu-button {
 right: 15px; }
 .govuk-header__container {
 position: relative;
 margin-bottom: -10px;
 padding-top: 10px;
-border-bottom: 10px solid #005ea5; }
+border-bottom: 10px solid #1d70b8; }
 .govuk-header__container:after {
 content: "";
 display: block;
@@ -2148,9 +2212,11 @@ clear: both; }
 .govuk-header__logotype {
 margin-right: 5px; }
 .govuk-header__logotype-crown {
+position: relative;
+top: -1px;
 margin-right: 1px;
 fill: currentColor;
-vertical-align: middle; }
+vertical-align: top; }
 .govuk-header__logotype-crown-fallback-image {
 width: 36px;
 height: 32px;
@@ -2163,7 +2229,7 @@ font-family: sans-serif;
 font-weight: 400;
 font-size: 18px;
 font-size: 1.125rem;
-line-height: 1.1111111111;
+line-height: 1;
 display: inline-table;
 padding-right: 10px; }
 @media print {
@@ -2173,23 +2239,23 @@ font-family: sans-serif; } }
 .govuk-header__product-name {
 font-size: 24px;
 font-size: 1.5rem;
-line-height: 1.25; } }
+line-height: 1; } }
 @media print {
 .govuk-header__product-name {
 font-size: 18pt;
-line-height: 1.15; } }
+line-height: 1; } }
 .govuk-header__link {
 text-decoration: none; }
-.govuk-header__link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
 .govuk-header__link:link, .govuk-header__link:visited {
 color: #ffffff; }
 .govuk-header__link:hover {
 text-decoration: underline; }
 .govuk-header__link:focus {
-color: #0b0c0c; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-header__link--homepage {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2197,7 +2263,7 @@ font-family: sans-serif;
 font-weight: 700;
 display: inline-block;
 font-size: 30px;
-line-height: 30px; }
+line-height: 1; }
 @media print {
 .govuk-header__link--homepage {
 font-family: sans-serif; } }
@@ -2206,6 +2272,9 @@ text-decoration: none; }
 .govuk-header__link--homepage:hover, .govuk-header__link--homepage:active {
 margin-bottom: -1px;
 border-bottom: 1px solid; }
+.govuk-header__link--homepage:focus {
+margin-bottom: 0;
+border-bottom: 0; }
 .govuk-header__link--service-name {
 display: inline-block;
 margin-bottom: 10px;
@@ -2279,6 +2348,12 @@ font-size: 14pt;
 line-height: 1.2; } }
 .govuk-header__menu-button:hover {
 text-decoration: underline; }
+.govuk-header__menu-button:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-header__menu-button::after {
 display: inline-block;
 width: 0;
@@ -2291,9 +2366,6 @@ border-width: 8.66px 5px 0 5px;
 border-top-color: inherit;
 content: "";
 margin-left: 5px; }
-.govuk-header__menu-button:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
 @media (min-width: 40.0625em) {
 .govuk-header__menu-button {
 top: 15px; } }
@@ -2382,11 +2454,6 @@ display: none; }
 color: #0b0c0c; }
 .govuk-header__link:after {
 display: none; } }
-.govuk-header__logotype-crown {
-position: relative;
-top: -4px; }
-.govuk-header {
-padding-top: 3px; }
 .govuk-inset-text {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2400,7 +2467,7 @@ padding: 15px;
 margin-top: 20px;
 margin-bottom: 20px;
 clear: both;
-border-left: 10px solid #bfc1c3; }
+border-left: 10px solid #b1b4b6; }
 @media print {
 .govuk-inset-text {
 font-family: sans-serif; } }
@@ -2457,7 +2524,7 @@ line-height: 1.15; } }
 padding: 25px; } }
 .govuk-panel--confirmation {
 color: #ffffff;
-background: #28a197; }
+background: #00703c; }
 .govuk-panel__title {
 margin-top: 0;
 margin-bottom: 30px;
@@ -2503,23 +2570,25 @@ line-height: 1.1111111111; } }
 font-size: 24pt;
 line-height: 1.05; } }
 .govuk-tag {
+display: inline-block;
+outline: 2px solid transparent;
+outline-offset: -2px;
+color: #ffffff;
+background-color: #1d70b8;
+letter-spacing: 1px;
+text-decoration: none;
+text-transform: uppercase;
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 font-weight: 700;
 font-size: 14px;
 font-size: 0.875rem;
-line-height: 1.25;
-display: inline-block;
-padding: 4px 8px;
-padding-bottom: 1px;
-outline: 2px solid transparent;
-outline-offset: -2px;
-color: #ffffff;
-background-color: #005ea5;
-letter-spacing: 1px;
-text-decoration: none;
-text-transform: uppercase; }
+line-height: 1;
+padding-top: 5px;
+padding-right: 8px;
+padding-bottom: 4px;
+padding-left: 8px; }
 @media print {
 .govuk-tag {
 font-family: sans-serif; } }
@@ -2527,17 +2596,17 @@ font-family: sans-serif; } }
 .govuk-tag {
 font-size: 16px;
 font-size: 1rem;
-line-height: 1.25; } }
+line-height: 1; } }
 @media print {
 .govuk-tag {
 font-size: 14pt;
-line-height: 1.25; } }
+line-height: 1; } }
 .govuk-tag--inactive {
 background-color: #6f777b; }
 .govuk-phase-banner {
 padding-top: 10px;
 padding-bottom: 10px;
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 .govuk-phase-banner__content {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2570,31 +2639,8 @@ margin-right: 10px; }
 display: table-cell;
 vertical-align: baseline; }
 .govuk-tabs {
-font-family: sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-font-weight: 400;
-font-size: 16px;
-font-size: 1rem;
-line-height: 1.25;
-color: #0b0c0c;
 margin-top: 5px;
 margin-bottom: 20px; }
-@media print {
-.govuk-tabs {
-font-family: sans-serif; } }
-@media (min-width: 40.0625em) {
-.govuk-tabs {
-font-size: 19px;
-font-size: 1.1875rem;
-line-height: 1.3157894737; } }
-@media print {
-.govuk-tabs {
-font-size: 14pt;
-line-height: 1.15; } }
-@media print {
-.govuk-tabs {
-color: #000000; } }
 @media (min-width: 40.0625em) {
 .govuk-tabs {
 margin-top: 5px; } }
@@ -2609,7 +2655,8 @@ font-weight: 400;
 font-size: 16px;
 font-size: 1rem;
 line-height: 1.25;
-margin-bottom: 5px; }
+color: #0b0c0c;
+margin-bottom: 10px; }
 @media print {
 .govuk-tabs__title {
 font-family: sans-serif; } }
@@ -2622,26 +2669,18 @@ line-height: 1.3157894737; } }
 .govuk-tabs__title {
 font-size: 14pt;
 line-height: 1.15; } }
+@media print {
+.govuk-tabs__title {
+color: #000000; } }
 .govuk-tabs__list {
 margin: 0;
 padding: 0;
-list-style: none; }
-@media (max-width: 40.0525em) {
-.govuk-tabs__list {
-margin-bottom: 20px; } }
-@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+list-style: none;
+margin-bottom: 20px; }
+@media (min-width: 40.0625em) {
 .govuk-tabs__list {
 margin-bottom: 30px; } }
 .govuk-tabs__list-item {
-margin-left: 25px; }
-.govuk-tabs__list-item::before {
-content: "\2014 ";
-margin-left: -25px;
-padding-right: 5px; }
-.govuk-tabs__tab {
-font-family: sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -2649,40 +2688,45 @@ font-weight: 400;
 font-size: 16px;
 font-size: 1rem;
 line-height: 1.25;
-display: inline-block;
-padding-top: 10px;
-padding-bottom: 10px; }
+margin-left: 25px; }
 @media print {
-.govuk-tabs__tab {
-font-family: sans-serif; } }
-.govuk-tabs__tab:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
-.govuk-tabs__tab:link {
-color: #005ea5; }
-.govuk-tabs__tab:visited {
-color: #4c2c92; }
-.govuk-tabs__tab:hover {
-color: #2b8cc4; }
-.govuk-tabs__tab:active {
-color: #2b8cc4; }
-.govuk-tabs__tab:focus {
-color: #0b0c0c; }
-@media print {
-.govuk-tabs__tab {
+.govuk-tabs__list-item {
 font-family: sans-serif; } }
 @media (min-width: 40.0625em) {
-.govuk-tabs__tab {
+.govuk-tabs__list-item {
 font-size: 19px;
 font-size: 1.1875rem;
 line-height: 1.3157894737; } }
 @media print {
-.govuk-tabs__tab {
+.govuk-tabs__list-item {
 font-size: 14pt;
 line-height: 1.15; } }
-.govuk-tabs__tab[aria-current="true"] {
+.govuk-tabs__list-item::before {
 color: #0b0c0c;
+content: "\2014 ";
+margin-left: -25px;
+padding-right: 5px; }
+@media print {
+.govuk-tabs__list-item::before {
+color: #000000; } }
+.govuk-tabs__tab {
+display: inline-block;
+margin-bottom: 10px; }
+.govuk-tabs__tab:link {
+color: #1d70b8; }
+.govuk-tabs__tab:visited {
+color: #4c2c92; }
+.govuk-tabs__tab:hover {
+color: #003078; }
+.govuk-tabs__tab:active {
+color: #0b0c0c; }
+.govuk-tabs__tab:focus {
+color: #0b0c0c; }
+.govuk-tabs__tab:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
 text-decoration: none; }
 .govuk-tabs__panel {
 margin-bottom: 30px; }
@@ -2691,55 +2735,66 @@ margin-bottom: 30px; }
 margin-bottom: 50px; } }
 @media (min-width: 40.0625em) {
 .js-enabled .govuk-tabs__list {
-border-bottom: 1px solid #bfc1c3; }
+margin-bottom: 0;
+border-bottom: 1px solid #b1b4b6; }
 .js-enabled .govuk-tabs__list:after {
 content: "";
 display: block;
 clear: both; }
-.js-enabled .govuk-tabs__list-item {
-margin-left: 0; }
-.js-enabled .govuk-tabs__list-item::before {
-content: none; }
 .js-enabled .govuk-tabs__title {
 display: none; }
-.js-enabled .govuk-tabs__tab {
+.js-enabled .govuk-tabs__list-item {
+position: relative;
 margin-right: 5px;
-padding-right: 20px;
-padding-left: 20px;
+margin-bottom: 0;
+margin-left: 0;
+padding: 10px 20px;
 float: left;
-color: #0b0c0c;
-background-color: #f8f8f8;
-text-align: center;
-text-decoration: none; }
-.js-enabled .govuk-tabs__tab--selected {
+background-color: #f3f2f1;
+text-align: center; }
+.js-enabled .govuk-tabs__list-item::before {
+content: none; }
+.js-enabled .govuk-tabs__list-item--selected {
+position: relative;
 margin-top: -5px;
 margin-bottom: -1px;
 padding-top: 14px;
 padding-right: 19px;
 padding-bottom: 16px;
 padding-left: 19px;
-border: 1px solid #bfc1c3;
+border: 1px solid #b1b4b6;
 border-bottom: 0;
-color: #0b0c0c;
 background-color: #ffffff; }
-.js-enabled .govuk-tabs__tab--selected:focus {
-background-color: transparent; }
+.js-enabled .govuk-tabs__list-item--selected .govuk-tabs__tab {
+text-decoration: none; }
+.js-enabled .govuk-tabs__tab {
+margin-bottom: 0; }
+.js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited, .js-enabled .govuk-tabs__tab:hover, .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+color: #0b0c0c; } }
+@media print and (min-width: 40.0625em) {
+.js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited, .js-enabled .govuk-tabs__tab:hover, .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+color: #000000; } }
+@media (min-width: 40.0625em) {
+.js-enabled .govuk-tabs__tab::after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0; }
 .js-enabled .govuk-tabs__panel {
 margin-bottom: 0;
-padding-top: 30px;
-padding-right: 20px;
-padding-bottom: 30px;
-padding-left: 20px;
-border: 1px solid #bfc1c3;
+padding: 30px 20px;
+border: 1px solid #b1b4b6;
 border-top: 0; } }
 @media (min-width: 40.0625em) and (min-width: 40.0625em) {
 .js-enabled .govuk-tabs__panel {
 margin-bottom: 0; } }
 @media (min-width: 40.0625em) {
-.js-enabled .govuk-tabs__panel--hidden {
-display: none; }
 .js-enabled .govuk-tabs__panel > :last-child {
-margin-bottom: 0; } }
+margin-bottom: 0; }
+.js-enabled .govuk-tabs__panel--hidden {
+display: none; } }
 .govuk-radios__item {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2813,9 +2868,8 @@ display: block;
 padding-right: 15px;
 padding-left: 15px; }
 .govuk-radios__input:focus + .govuk-radios__label::before {
-outline: 3px solid transparent;
-outline-offset: 3px;
-box-shadow: 0 0 0 4px #ffbf47; }
+border-width: 4px;
+box-shadow: 0 0 0 4px #ffdd00; }
 .govuk-radios__input:checked + .govuk-radios__label::after {
 opacity: 1; }
 .govuk-radios__input:disabled,
@@ -2866,7 +2920,7 @@ color: #000000; } }
 margin-bottom: 15px;
 margin-left: 18px;
 padding-left: 33px;
-border-left: 4px solid #bfc1c3; }
+border-left: 4px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-radios__conditional {
 margin-bottom: 20px; } }
@@ -2897,9 +2951,9 @@ top: 8px;
 width: 24px;
 height: 24px; }
 .govuk-radios--small .govuk-radios__label::after {
-top: 14px;
-left: 6px;
-border-width: 6px; }
+top: 15px;
+left: 7px;
+border-width: 5px; }
 .govuk-radios--small .govuk-radios__hint {
 padding: 0;
 clear: both;
@@ -2912,14 +2966,14 @@ clear: both; }
 width: 24px;
 margin-bottom: 5px; }
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
-box-shadow: 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 10px #b1b4b6; }
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-box-shadow: 0 0 0 4px #ffbf47, 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 4px #ffdd00, 0 0 0 10px #b1b4b6; }
 @media (hover: none), (pointer: coarse) {
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
 box-shadow: initial; }
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-box-shadow: 0 0 0 4px #ffbf47; } }
+box-shadow: 0 0 0 4px #ffdd00; } }
 .govuk-select {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2946,15 +3000,19 @@ line-height: 1.25; } }
 font-size: 14pt;
 line-height: 1.25; } }
 .govuk-select:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+outline: 3px solid #ffdd00;
+outline-offset: 0;
+box-shadow: inset 0 0 0 2px; }
 .govuk-select option:active,
 .govuk-select option:checked,
 .govuk-select:focus::-ms-value {
 color: #ffffff;
-background-color: #005ea5; }
+background-color: #1d70b8; }
 .govuk-select--error {
-border: 4px solid #b10e1e; }
+border: 4px solid #d4351c; }
+.govuk-select--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-skip-link {
 position: absolute !important;
 width: 1px !important;
@@ -2986,10 +3044,6 @@ white-space: inherit !important; }
 @media print {
 .govuk-skip-link {
 font-family: sans-serif; } }
-.govuk-skip-link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
 .govuk-skip-link:link, .govuk-skip-link:visited, .govuk-skip-link:hover, .govuk-skip-link:active, .govuk-skip-link:focus {
 color: #0b0c0c; }
 @media print {
@@ -3008,6 +3062,9 @@ line-height: 1.2; } }
 .govuk-skip-link {
 padding-right: max(15px, calc(15px + env(safe-area-inset-right)));
 padding-left: max(15px, calc(15px + env(safe-area-inset-left))); } }
+.govuk-skip-link:focus {
+outline: 3px solid #ffdd00;
+background-color: #ffdd00; }
 .govuk-table {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -3044,16 +3101,24 @@ font-weight: 700; }
 .govuk-table__header,
 .govuk-table__cell {
 padding: 10px 20px 10px 0;
-border-bottom: 1px solid #bfc1c3;
-text-align: left; }
+border-bottom: 1px solid #b1b4b6;
+text-align: left;
+vertical-align: top; }
 .govuk-table__cell--numeric {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
+-webkit-font-feature-settings: "tnum" 1;
+font-feature-settings: "tnum" 1;
 font-weight: 400; }
 @media print {
 .govuk-table__cell--numeric {
 font-family: sans-serif; } }
+@supports (font-variant-numeric: tabular-nums) {
+.govuk-table__cell--numeric {
+-webkit-font-feature-settings: normal;
+font-feature-settings: normal;
+font-variant-numeric: tabular-nums; } }
 .govuk-table__header--numeric,
 .govuk-table__cell--numeric {
 text-align: right; }
@@ -3094,14 +3159,18 @@ line-height: 1.25; } }
 .govuk-textarea {
 font-size: 14pt;
 line-height: 1.25; } }
-.govuk-textarea:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
 @media (min-width: 40.0625em) {
 .govuk-textarea {
 margin-bottom: 30px; } }
+.govuk-textarea:focus {
+outline: 3px solid #ffdd00;
+outline-offset: 0;
+box-shadow: inset 0 0 0 2px; }
 .govuk-textarea--error {
-border: 4px solid #b10e1e; }
+border: 4px solid #d4351c; }
+.govuk-textarea--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-warning-text {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -3857,8 +3926,12 @@ margin-top: 0;
 margin-bottom: 15px;
 padding: 15px;
 overflow: auto;
-border: 1px solid #bfc1c3;
+border: 1px solid #b1b4b6;
 background-color: #f8f8f8; }
+pre,
+code {
+font-family: monospace, monospace;
+font-size: 1em; }
 .sourceCode + .govuk-heading-l, .sourceCode + .govuk-heading-l {
 padding-top: 5px; }
 @media (min-width: 40.0625em) {
@@ -5486,28 +5559,21 @@ if (detect) return
 })
 .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
-/**
- * JavaScript 'shim' to trigger the click event of element(s) when the space key is pressed.
- *
- * Created since some Assistive Technologies (for example some Screenreaders)
- * will tell a user to press space on a 'button', so this functionality needs to be shimmed
- * See https://github.com/alphagov/govuk_elements/pull/272#issuecomment-233028270
- *
- * Usage instructions:
- * the 'shim' will be automatically initialised
- */
-
 var KEY_SPACE = 32;
 var DEBOUNCE_TIMEOUT_IN_SECONDS = 1;
-var debounceFormSubmitTimer = null;
 
 function Button ($module) {
   this.$module = $module;
+  this.debounceFormSubmitTimer = null;
 }
 
 /**
-* if the event target element has a role='button' and the event is key space pressed
-* then it prevents the default event and triggers a click event
+* JavaScript 'shim' to trigger the click event of element(s) when the space key is pressed.
+*
+* Created since some Assistive Technologies (for example some Screenreaders)
+* will tell a user to press space on a 'button', so this functionality needs to be shimmed
+* See https://github.com/alphagov/govuk_elements/pull/272#issuecomment-233028270
+*
 * @param {object} event event
 */
 Button.prototype.handleKeyDown = function (event) {
@@ -5534,14 +5600,14 @@ Button.prototype.debounce = function (event) {
   }
 
   // If the timer is still running then we want to prevent the click from submitting the form
-  if (debounceFormSubmitTimer) {
+  if (this.debounceFormSubmitTimer) {
     event.preventDefault();
     return false
   }
 
-  debounceFormSubmitTimer = setTimeout(function () {
-    debounceFormSubmitTimer = null;
-  }, DEBOUNCE_TIMEOUT_IN_SECONDS * 1000);
+  this.debounceFormSubmitTimer = setTimeout(function () {
+    this.debounceFormSubmitTimer = null;
+  }.bind(this), DEBOUNCE_TIMEOUT_IN_SECONDS * 1000);
 };
 
 /**
@@ -5558,27 +5624,112 @@ Button.prototype.init = function () {
  * and 'shim' to add accessiblity enhancements for all browsers
  *
  * http://caniuse.com/#feat=details
- *
- * Usage instructions:
- * the 'polyfill' will be automatically initialised
  */
 
 var KEY_ENTER = 13;
 var KEY_SPACE$1 = 32;
 
-// Create a flag to know if the browser supports navtive details
-var NATIVE_DETAILS = typeof document.createElement('details').open === 'boolean';
-
 function Details ($module) {
   this.$module = $module;
 }
+
+Details.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+
+  // If there is native details support, we want to avoid running code to polyfill native behaviour.
+  var hasNativeDetails = typeof this.$module.open === 'boolean';
+
+  if (hasNativeDetails) {
+    return
+  }
+
+  this.polyfillDetails();
+};
+
+Details.prototype.polyfillDetails = function () {
+  var $module = this.$module;
+
+  // Save shortcuts to the inner summary and content elements
+  var $summary = this.$summary = $module.getElementsByTagName('summary').item(0);
+  var $content = this.$content = $module.getElementsByTagName('div').item(0);
+
+  // If <details> doesn't have a <summary> and a <div> representing the content
+  // it means the required HTML structure is not met so the script will stop
+  if (!$summary || !$content) {
+    return
+  }
+
+  // If the content doesn't have an ID, assign it one now
+  // which we'll need for the summary's aria-controls assignment
+  if (!$content.id) {
+    $content.id = 'details-content-' + generateUniqueID();
+  }
+
+  // Add ARIA role="group" to details
+  $module.setAttribute('role', 'group');
+
+  // Add role=button to summary
+  $summary.setAttribute('role', 'button');
+
+  // Add aria-controls
+  $summary.setAttribute('aria-controls', $content.id);
+
+  // Set tabIndex so the summary is keyboard accessible for non-native elements
+  //
+  // We have to use the camelcase `tabIndex` property as there is a bug in IE6/IE7 when we set the correct attribute lowercase:
+  // See http://web.archive.org/web/20170120194036/http://www.saliences.com/browserBugs/tabIndex.html for more information.
+  $summary.tabIndex = 0;
+
+  // Detect initial open state
+  var openAttr = $module.getAttribute('open') !== null;
+  if (openAttr === true) {
+    $summary.setAttribute('aria-expanded', 'true');
+    $content.setAttribute('aria-hidden', 'false');
+  } else {
+    $summary.setAttribute('aria-expanded', 'false');
+    $content.setAttribute('aria-hidden', 'true');
+    $content.style.display = 'none';
+  }
+
+  // Bind an event to handle summary elements
+  this.polyfillHandleInputs($summary, this.polyfillSetAttributes.bind(this));
+};
+
+/**
+* Define a statechange function that updates aria-expanded and style.display
+* @param {object} summary element
+*/
+Details.prototype.polyfillSetAttributes = function () {
+  var $module = this.$module;
+  var $summary = this.$summary;
+  var $content = this.$content;
+
+  var expanded = $summary.getAttribute('aria-expanded') === 'true';
+  var hidden = $content.getAttribute('aria-hidden') === 'true';
+
+  $summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
+  $content.setAttribute('aria-hidden', (hidden ? 'false' : 'true'));
+
+  $content.style.display = (expanded ? 'none' : '');
+
+  var hasOpenAttr = $module.getAttribute('open') !== null;
+  if (!hasOpenAttr) {
+    $module.setAttribute('open', 'open');
+  } else {
+    $module.removeAttribute('open');
+  }
+
+  return true
+};
 
 /**
 * Handle cross-modal click events
 * @param {object} node element
 * @param {function} callback function
 */
-Details.prototype.handleInputs = function (node, callback) {
+Details.prototype.polyfillHandleInputs = function (node, callback) {
   node.addEventListener('keypress', function (event) {
     var target = event.target;
     // When the key gets pressed - check if it is enter or space
@@ -5611,102 +5762,9 @@ Details.prototype.handleInputs = function (node, callback) {
   node.addEventListener('click', callback);
 };
 
-Details.prototype.init = function () {
-  var $module = this.$module;
-
-  if (!$module) {
-    return
-  }
-
-  // Save shortcuts to the inner summary and content elements
-  var $summary = this.$summary = $module.getElementsByTagName('summary').item(0);
-  var $content = this.$content = $module.getElementsByTagName('div').item(0);
-
-  // If <details> doesn't have a <summary> and a <div> representing the content
-  // it means the required HTML structure is not met so the script will stop
-  if (!$summary || !$content) {
-    return
-  }
-
-  // If the content doesn't have an ID, assign it one now
-  // which we'll need for the summary's aria-controls assignment
-  if (!$content.id) {
-    $content.id = 'details-content-' + generateUniqueID();
-  }
-
-  // Add ARIA role="group" to details
-  $module.setAttribute('role', 'group');
-
-  // Add role=button to summary
-  $summary.setAttribute('role', 'button');
-
-  // Add aria-controls
-  $summary.setAttribute('aria-controls', $content.id);
-
-  // Set tabIndex so the summary is keyboard accessible for non-native elements
-  // http://www.saliences.com/browserBugs/tabIndex.html
-  if (!NATIVE_DETAILS) {
-    $summary.tabIndex = 0;
-  }
-
-  // Detect initial open state
-  var openAttr = $module.getAttribute('open') !== null;
-  if (openAttr === true) {
-    $summary.setAttribute('aria-expanded', 'true');
-    $content.setAttribute('aria-hidden', 'false');
-  } else {
-    $summary.setAttribute('aria-expanded', 'false');
-    $content.setAttribute('aria-hidden', 'true');
-    if (!NATIVE_DETAILS) {
-      $content.style.display = 'none';
-    }
-  }
-
-  // Bind an event to handle summary elements
-  this.handleInputs($summary, this.setAttributes.bind(this));
-};
-
-/**
-* Define a statechange function that updates aria-expanded and style.display
-* @param {object} summary element
-*/
-Details.prototype.setAttributes = function () {
-  var $module = this.$module;
-  var $summary = this.$summary;
-  var $content = this.$content;
-
-  var expanded = $summary.getAttribute('aria-expanded') === 'true';
-  var hidden = $content.getAttribute('aria-hidden') === 'true';
-
-  $summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
-  $content.setAttribute('aria-hidden', (hidden ? 'false' : 'true'));
-
-  if (!NATIVE_DETAILS) {
-    $content.style.display = (expanded ? 'none' : '');
-
-    var hasOpenAttr = $module.getAttribute('open') !== null;
-    if (!hasOpenAttr) {
-      $module.setAttribute('open', 'open');
-    } else {
-      $module.removeAttribute('open');
-    }
-  }
-  return true
-};
-
-/**
-* Remove the click event from the node element
-* @param {object} node element
-*/
-Details.prototype.destroy = function (node) {
-  node.removeEventListener('keypress');
-  node.removeEventListener('keyup');
-  node.removeEventListener('click');
-};
-
 function CharacterCount ($module) {
   this.$module = $module;
-  this.$textarea = $module.querySelector('.js-character-count');
+  this.$textarea = $module.querySelector('.govuk-js-character-count');
 }
 
 CharacterCount.prototype.defaults = {
@@ -5846,8 +5904,12 @@ CharacterCount.prototype.updateCountMessage = function () {
   var thresholdValue = maxLength * thresholdPercent / 100;
   if (thresholdValue > currentLength) {
     countMessage.classList.add('govuk-character-count__message--disabled');
+    // Ensure threshold is hidden for users of assistive technologies
+    countMessage.setAttribute('aria-hidden', true);
   } else {
     countMessage.classList.remove('govuk-character-count__message--disabled');
+    // Ensure threshold is visible for users of assistive technologies
+    countMessage.removeAttribute('aria-hidden');
   }
 
   // Update styles
@@ -6048,16 +6110,6 @@ ErrorSummary.prototype.focusTarget = function ($target) {
     return false
   }
 
-  // Prefer using the history API where possible, as updating
-  // window.location.hash causes the viewport to jump to the input briefly
-  // before then scrolling to the label/legend in IE10, IE11 and Edge (as tested
-  // in Edge 17).
-  if (window.history.pushState) {
-    window.history.pushState(null, null, '#' + inputId);
-  } else {
-    window.location.hash = inputId;
-  }
-
   // Scroll the legend or label into view *before* calling focus on the input to
   // avoid extra scrolling in browsers that don't support `preventScroll` (which
   // at time of writing is most of them...)
@@ -6124,7 +6176,7 @@ Header.prototype.init = function () {
   }
 
   // Check for button
-  var $toggleButton = $module.querySelector('.js-header-toggle');
+  var $toggleButton = $module.querySelector('.govuk-js-header-toggle');
   if (!$toggleButton) {
     return
   }
@@ -6167,12 +6219,11 @@ Header.prototype.handleClick = function (event) {
 
 function Radios ($module) {
   this.$module = $module;
-  this.$inputs = $module.querySelectorAll('input[type="radio"]');
 }
 
 Radios.prototype.init = function () {
   var $module = this.$module;
-  var $inputs = this.$inputs;
+  var $inputs = $module.querySelectorAll('input[type="radio"]');
 
   /**
   * Loop over all items with [data-controls]
@@ -6199,25 +6250,87 @@ Radios.prototype.init = function () {
 };
 
 Radios.prototype.setAttributes = function ($input) {
-  var inputIsChecked = $input.checked;
-  $input.setAttribute('aria-expanded', inputIsChecked);
+  var $content = document.querySelector('#' + $input.getAttribute('aria-controls'));
 
-  var $content = this.$module.querySelector('#' + $input.getAttribute('aria-controls'));
-  if ($content) {
+  if ($content && $content.classList.contains('govuk-radios__conditional')) {
+    var inputIsChecked = $input.checked;
+
+    $input.setAttribute('aria-expanded', inputIsChecked);
+
     $content.classList.toggle('govuk-radios__conditional--hidden', !inputIsChecked);
   }
 };
 
 Radios.prototype.handleClick = function (event) {
-  nodeListForEach(this.$inputs, function ($input) {
-    // If a radio with aria-controls, handle click
-    var isRadio = $input.getAttribute('type') === 'radio';
-    var hasAriaControls = $input.getAttribute('aria-controls');
-    if (isRadio && hasAriaControls) {
+  var $clickedInput = event.target;
+  // We only want to handle clicks for radio inputs
+  if ($clickedInput.type !== 'radio') {
+    return
+  }
+  // Because checking one radio can uncheck a radio in another $module,
+  // we need to call set attributes on all radios in the same form, or document if they're not in a form.
+  //
+  // We also only want radios which have aria-controls, as they support conditional reveals.
+  var $allInputs = document.querySelectorAll('input[type="radio"][aria-controls]');
+  nodeListForEach($allInputs, function ($input) {
+    // Only inputs with the same form owner should change.
+    var hasSameFormOwner = ($input.form === $clickedInput.form);
+
+    // In radios, only radios with the same name will affect each other.
+    var hasSameName = ($input.name === $clickedInput.name);
+    if (hasSameName && hasSameFormOwner) {
       this.setAttributes($input);
     }
   }.bind(this));
 };
+
+(function(undefined) {
+
+    // Detection from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-b09a5d2acf3314b46a6c8f8d0c31b85c
+    var detect = (
+      'Element' in this && "nextElementSibling" in document.documentElement
+    );
+
+    if (detect) return
+
+
+    (function (global) {
+
+      // Polyfill from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-404b69b4750d18dea4174930a49170fd
+      Object.defineProperty(Element.prototype, "nextElementSibling", {
+        get: function(){
+          var el = this.nextSibling;
+          while (el && el.nodeType !== 1) { el = el.nextSibling; }
+          return (el.nodeType === 1) ? el : null;
+        }
+      });
+
+    }(this));
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+
+    // Detection from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-a162235fbc9c0dd40d4032265f44942e
+    var detect = (
+      'Element' in this && 'previousElementSibling' in document.documentElement
+    );
+
+    if (detect) return
+
+    (function (global) {
+      // Polyfill from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-b45a1197b842728cb76b624b6ba7d739
+      Object.defineProperty(Element.prototype, 'previousElementSibling', {
+        get: function(){
+          var el = this.previousSibling;
+          while (el && el.nodeType !== 1) { el = el.previousSibling; }
+          return (el.nodeType === 1) ? el : null;
+        }
+      });
+
+    }(this));
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
 function Tabs ($module) {
   this.$module = $module;
@@ -6360,6 +6473,7 @@ Tabs.prototype.setAttributes = function ($tab) {
   $tab.setAttribute('id', 'tab_' + panelId);
   $tab.setAttribute('role', 'tab');
   $tab.setAttribute('aria-controls', panelId);
+  $tab.setAttribute('aria-selected', 'false');
   $tab.setAttribute('tabindex', '-1');
 
   // set panel attributes
@@ -6374,6 +6488,7 @@ Tabs.prototype.unsetAttributes = function ($tab) {
   $tab.removeAttribute('id');
   $tab.removeAttribute('role');
   $tab.removeAttribute('aria-controls');
+  $tab.removeAttribute('aria-selected');
   $tab.removeAttribute('tabindex');
 
   // unset panel attributes
@@ -6384,6 +6499,10 @@ Tabs.prototype.unsetAttributes = function ($tab) {
 };
 
 Tabs.prototype.onTabClick = function (e) {
+  if (!e.target.classList.contains('govuk-tabs__tab')) {
+  // Allow events on child DOM elements to bubble up to tab parent
+    return false
+  }
   e.preventDefault();
   var $newTab = e.target;
   var $currentTab = this.getCurrentTab();
@@ -6423,7 +6542,7 @@ Tabs.prototype.activateNextTab = function () {
   var currentTab = this.getCurrentTab();
   var nextTabListItem = currentTab.parentNode.nextElementSibling;
   if (nextTabListItem) {
-    var nextTab = nextTabListItem.firstElementChild;
+    var nextTab = nextTabListItem.querySelector('.govuk-tabs__tab');
   }
   if (nextTab) {
     this.hideTab(currentTab);
@@ -6437,7 +6556,7 @@ Tabs.prototype.activatePreviousTab = function () {
   var currentTab = this.getCurrentTab();
   var previousTabListItem = currentTab.parentNode.previousElementSibling;
   if (previousTabListItem) {
-    var previousTab = previousTabListItem.firstElementChild;
+    var previousTab = previousTabListItem.querySelector('.govuk-tabs__tab');
   }
   if (previousTab) {
     this.hideTab(currentTab);
@@ -6464,18 +6583,18 @@ Tabs.prototype.hidePanel = function (tab) {
 
 Tabs.prototype.unhighlightTab = function ($tab) {
   $tab.setAttribute('aria-selected', 'false');
-  $tab.classList.remove('govuk-tabs__tab--selected');
+  $tab.parentNode.classList.remove('govuk-tabs__list-item--selected');
   $tab.setAttribute('tabindex', '-1');
 };
 
 Tabs.prototype.highlightTab = function ($tab) {
   $tab.setAttribute('aria-selected', 'true');
-  $tab.classList.add('govuk-tabs__tab--selected');
+  $tab.parentNode.classList.add('govuk-tabs__list-item--selected');
   $tab.setAttribute('tabindex', '0');
 };
 
 Tabs.prototype.getCurrentTab = function () {
-  return this.$module.querySelector('.govuk-tabs__tab--selected')
+  return this.$module.querySelector('.govuk-tabs__list-item--selected .govuk-tabs__tab')
 };
 
 // this is because IE doesn't always return the actual value but a relative full path
@@ -6495,45 +6614,45 @@ function initAll (options) {
   // Defaults to the entire document if nothing is set.
   var scope = typeof options.scope !== 'undefined' ? options.scope : document;
 
-  // Find all buttons with [role=button] on the scope to enhance.
-  new Button(scope).init();
+  var $buttons = scope.querySelectorAll('[data-module="govuk-button"]');
+  nodeListForEach($buttons, function ($button) {
+    new Button($button).init();
+  });
 
-  // Find all global accordion components to enhance.
-  var $accordions = scope.querySelectorAll('[data-module="accordion"]');
+  var $accordions = scope.querySelectorAll('[data-module="govuk-accordion"]');
   nodeListForEach($accordions, function ($accordion) {
     new Accordion($accordion).init();
   });
 
-  // Find all global details elements to enhance.
-  var $details = scope.querySelectorAll('details');
+  var $details = scope.querySelectorAll('[data-module="govuk-details"]');
   nodeListForEach($details, function ($detail) {
     new Details($detail).init();
   });
 
-  var $characterCount = scope.querySelectorAll('[data-module="character-count"]');
-  nodeListForEach($characterCount, function ($characterCount) {
+  var $characterCounts = scope.querySelectorAll('[data-module="govuk-character-count"]');
+  nodeListForEach($characterCounts, function ($characterCount) {
     new CharacterCount($characterCount).init();
   });
 
-  var $checkboxes = scope.querySelectorAll('[data-module="checkboxes"]');
+  var $checkboxes = scope.querySelectorAll('[data-module="govuk-checkboxes"]');
   nodeListForEach($checkboxes, function ($checkbox) {
     new Checkboxes($checkbox).init();
   });
 
   // Find first error summary module to enhance.
-  var $errorSummary = scope.querySelector('[data-module="error-summary"]');
+  var $errorSummary = scope.querySelector('[data-module="govuk-error-summary"]');
   new ErrorSummary($errorSummary).init();
 
   // Find first header module to enhance.
-  var $toggleButton = scope.querySelector('[data-module="header"]');
+  var $toggleButton = scope.querySelector('[data-module="govuk-header"]');
   new Header($toggleButton).init();
 
-  var $radios = scope.querySelectorAll('[data-module="radios"]');
+  var $radios = scope.querySelectorAll('[data-module="govuk-radios"]');
   nodeListForEach($radios, function ($radio) {
     new Radios($radio).init();
   });
 
-  var $tabs = scope.querySelectorAll('[data-module="tabs"]');
+  var $tabs = scope.querySelectorAll('[data-module="govuk-tabs"]');
   nodeListForEach($tabs, function ($tabs) {
     new Tabs($tabs).init();
   });
@@ -6570,3 +6689,4 @@ exports.Tabs = Tabs;
 </body>
 
 </html>
+

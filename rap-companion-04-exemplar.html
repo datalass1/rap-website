@@ -29,94 +29,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
   <!--[if !IE 8]><!-->
   <style type="text/css">.govuk-link {
@@ -127,17 +39,19 @@ font-family: sans-serif;
 .govuk-link {
 font-family: sans-serif; } }
 .govuk-link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-link:link {
-color: #005ea5; }
+color: #1d70b8; }
 .govuk-link:visited {
 color: #4c2c92; }
 .govuk-link:hover {
-color: #2b8cc4; }
+color: #003078; }
 .govuk-link:active {
-color: #2b8cc4; }
+color: #0b0c0c; }
 .govuk-link:focus {
 color: #0b0c0c; }
 @media print {
@@ -155,13 +69,13 @@ color: #0b0c0c; }
 .govuk-link--text-colour:link, .govuk-link--text-colour:visited, .govuk-link--text-colour:hover, .govuk-link--text-colour:active, .govuk-link--text-colour:focus {
 color: #000000; } }
 .govuk-link--no-visited-state:link {
-color: #005ea5; }
+color: #1d70b8; }
 .govuk-link--no-visited-state:visited {
-color: #005ea5; }
+color: #1d70b8; }
 .govuk-link--no-visited-state:hover {
-color: #2b8cc4; }
+color: #003078; }
 .govuk-link--no-visited-state:active {
-color: #2b8cc4; }
+color: #0b0c0c; }
 .govuk-link--no-visited-state:focus {
 color: #0b0c0c; }
 .govuk-list {
@@ -213,7 +127,7 @@ margin-bottom: 0; }
 .govuk-list--number > li {
 margin-bottom: 5px; } }
 .govuk-template {
-background-color: #dee0e2;
+background-color: #f3f2f1;
 -webkit-text-size-adjust: 100%;
 -moz-text-size-adjust: 100%;
 -ms-text-size-adjust: 100%;
@@ -593,7 +507,7 @@ margin-top: 20px; } }
 .govuk-section-break--m {
 margin-bottom: 20px; } }
 .govuk-section-break--visible {
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 .govuk-form-group {
 margin-bottom: 20px; }
 .govuk-form-group:after {
@@ -607,7 +521,7 @@ margin-bottom: 30px; } }
 margin-bottom: 0; }
 .govuk-form-group--error {
 padding-left: 15px;
-border-left: 5px solid #b10e1e; }
+border-left: 5px solid #d4351c; }
 .govuk-form-group--error .govuk-form-group {
 padding: 0;
 border: 0; }
@@ -716,9 +630,11 @@ padding-bottom: 20px; }
 .govuk-main-wrapper {
 padding-top: 40px;
 padding-bottom: 40px; } }
+.govuk-main-wrapper--auto-spacing:first-child,
 .govuk-main-wrapper--l {
 padding-top: 30px; }
 @media (min-width: 40.0625em) {
+.govuk-main-wrapper--auto-spacing:first-child,
 .govuk-main-wrapper--l {
 padding-top: 50px; } }
 .govuk-width-container {
@@ -749,6 +665,7 @@ margin-bottom: 30px; } }
 .govuk-accordion__section {
 padding-top: 15px; }
 .govuk-accordion__section-header {
+padding-top: 15px;
 padding-bottom: 15px; }
 .govuk-accordion__section-heading {
 margin-top: 0;
@@ -782,10 +699,9 @@ margin-bottom: 0; }
 .govuk-accordion__section-content > :last-child {
 margin-bottom: 0; }
 .js-enabled .govuk-accordion {
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 .js-enabled .govuk-accordion__section {
-padding-top: 0;
-border-top: 1px solid #bfc1c3; }
+padding-top: 0; }
 .js-enabled .govuk-accordion__section-content {
 display: none;
 padding-top: 15px;
@@ -806,14 +722,18 @@ font-weight: 400;
 font-size: 14px;
 font-size: 0.875rem;
 line-height: 1.1428571429;
+position: relative;
+z-index: 1;
+margin: 0;
+padding: 0;
+border-width: 0;
+color: #1d70b8;
+background: none;
+cursor: pointer;
+-webkit-appearance: none;
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-display: inline;
-border-width: 0;
-color: #005ea5;
-background: none;
-cursor: pointer; }
+-moz-osx-font-smoothing: grayscale; }
 @media print {
 .js-enabled .govuk-accordion__open-all {
 font-family: sans-serif; } }
@@ -830,49 +750,60 @@ line-height: 1.2; } }
 .js-enabled .govuk-accordion__open-all {
 font-family: sans-serif; } }
 .js-enabled .govuk-accordion__open-all:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
+.js-enabled .govuk-accordion__open-all:link {
+color: #1d70b8; }
+.js-enabled .govuk-accordion__open-all:visited {
+color: #4c2c92; }
+.js-enabled .govuk-accordion__open-all:hover {
+color: #003078; }
+.js-enabled .govuk-accordion__open-all:active {
+color: #0b0c0c; }
 .js-enabled .govuk-accordion__open-all:focus {
-background: none; }
+color: #0b0c0c; }
+.js-enabled .govuk-accordion__open-all::-moz-focus-inner {
+padding: 0;
+border: 0; }
 .js-enabled .govuk-accordion__section-header {
 position: relative;
 padding-right: 40px;
+border-top: 1px solid #b1b4b6;
+color: #1d70b8;
 cursor: pointer; }
-.js-enabled .govuk-accordion__section-header:hover {
-background-color: #f8f8f8; }
 @media (hover: none) {
 .js-enabled .govuk-accordion__section-header:hover {
-background-color: initial; } }
-.js-enabled .govuk-accordion__section-header--focused {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+border-top-color: #1d70b8;
+box-shadow: inset 0 3px 0 0 #1d70b8; } }
 .js-enabled .govuk-accordion__section-button {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
-width: 100%;
 margin-top: 0;
 margin-bottom: 0;
 margin-left: 0;
-padding-top: 15px;
-padding-bottom: 0;
-padding-left: 0;
+padding: 0;
 border-width: 0;
-color: #005ea5;
+color: inherit;
 background: none;
 text-align: left;
-cursor: pointer; }
+cursor: pointer;
+-webkit-appearance: none; }
 @media print {
 .js-enabled .govuk-accordion__section-button {
 font-family: sans-serif; } }
 .js-enabled .govuk-accordion__section-button:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
-.js-enabled .govuk-accordion__section-button:focus {
-outline: none;
-background: none; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
+.js-enabled .govuk-accordion__section-button::-moz-focus-inner {
+padding: 0;
+border: 0; }
 .js-enabled .govuk-accordion__section-button:after {
 content: "";
 position: absolute;
@@ -880,6 +811,11 @@ top: 0;
 right: 0;
 bottom: 0;
 left: 0; }
+.js-enabled .govuk-accordion__section-button:hover:not(:focus) {
+text-decoration: underline; }
+@media (hover: none) {
+.js-enabled .govuk-accordion__section-button:hover {
+text-decoration: none; } }
 .js-enabled .govuk-accordion__controls {
 text-align: right; }
 .js-enabled .govuk-accordion__icon {
@@ -937,14 +873,18 @@ line-height: 1.2; } }
 .govuk-back-link {
 font-family: sans-serif; } }
 .govuk-back-link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-back-link:link, .govuk-back-link:visited, .govuk-back-link:hover, .govuk-back-link:active, .govuk-back-link:focus {
 color: #0b0c0c; }
 @media print {
 .govuk-back-link:link, .govuk-back-link:visited, .govuk-back-link:hover, .govuk-back-link:active, .govuk-back-link:focus {
 color: #000000; } }
+.govuk-back-link:focus {
+border-bottom-color: transparent; }
 .govuk-back-link:before {
 display: block;
 width: 0;
@@ -957,13 +897,10 @@ border-width: 5px 6px 5px 0;
 border-right-color: inherit;
 content: "";
 position: absolute;
-top: -1px;
-bottom: 1px;
+top: 0;
+bottom: 0;
 left: 0;
 margin: auto; }
-.govuk-back-link:before {
-top: -1px;
-bottom: 1px; }
 .govuk-breadcrumbs {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1009,8 +946,8 @@ float: left; }
 content: "";
 display: block;
 position: absolute;
-top: -1px;
-bottom: 1px;
+top: 0;
+bottom: 0;
 left: -3.31px;
 width: 7px;
 height: 7px;
@@ -1035,9 +972,11 @@ font-family: sans-serif;
 .govuk-breadcrumbs__link {
 font-family: sans-serif; } }
 .govuk-breadcrumbs__link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-breadcrumbs__link:link, .govuk-breadcrumbs__link:visited, .govuk-breadcrumbs__link:hover, .govuk-breadcrumbs__link:active, .govuk-breadcrumbs__link:focus {
 color: #0b0c0c; }
 @media print {
@@ -1057,12 +996,12 @@ position: relative;
 width: 100%;
 margin-top: 0;
 margin-bottom: 22px;
-padding: 7px 10px;
+padding: 8px 10px 7px;
 border: 2px solid transparent;
 border-radius: 0;
 color: #ffffff;
-background-color: #00823b;
-box-shadow: 0 2px 0 #003418;
+background-color: #00703c;
+box-shadow: 0 2px 0 #002d18;
 text-align: center;
 vertical-align: top;
 cursor: pointer;
@@ -1079,9 +1018,6 @@ line-height: 1; } }
 .govuk-button {
 font-size: 14pt;
 line-height: 19px; } }
-.govuk-button:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
 @media (min-width: 40.0625em) {
 .govuk-button {
 margin-bottom: 32px; } }
@@ -1094,11 +1030,19 @@ text-decoration: none; }
 .govuk-button::-moz-focus-inner {
 padding: 0;
 border: 0; }
-.govuk-button:hover, .govuk-button:focus {
-background-color: #00682f; }
+.govuk-button:hover {
+background-color: #005a30; }
 .govuk-button:active {
-top: 2px;
-box-shadow: none; }
+top: 2px; }
+.govuk-button:focus {
+border-color: #ffdd00;
+outline: 3px solid transparent;
+box-shadow: inset 0 0 0 1px #ffdd00; }
+.govuk-button:focus:not(:active):not(:hover) {
+border-color: #ffdd00;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 2px 0 #0b0c0c; }
 .govuk-button::before {
 content: "";
 display: block;
@@ -1117,7 +1061,7 @@ opacity: 0.5; }
 .govuk-button--disabled:hover,
 .govuk-button[disabled="disabled"]:hover,
 .govuk-button[disabled]:hover {
-background-color: #00823b;
+background-color: #00703c;
 cursor: default; }
 .govuk-button--disabled:focus,
 .govuk-button[disabled="disabled"]:focus,
@@ -1127,38 +1071,39 @@ outline: none; }
 .govuk-button[disabled="disabled"]:active,
 .govuk-button[disabled]:active {
 top: 0;
-box-shadow: 0 2px 0 #003418; }
+box-shadow: 0 2px 0 #002d18; }
 .govuk-button--secondary {
-background-color: #dee0e2;
-box-shadow: 0 2px 0 #858688; }
+background-color: #f3f2f1;
+box-shadow: 0 2px 0 #929191; }
 .govuk-button--secondary, .govuk-button--secondary:link, .govuk-button--secondary:visited, .govuk-button--secondary:active, .govuk-button--secondary:hover {
 color: #0b0c0c; }
-.govuk-button--secondary:hover, .govuk-button--secondary:focus {
-background-color: #c8cacb; }
-.govuk-button--secondary:hover[disabled], .govuk-button--secondary:focus[disabled] {
-background-color: #dee0e2; }
+.govuk-button--secondary:hover {
+background-color: #dbdad9; }
+.govuk-button--secondary:hover[disabled] {
+background-color: #f3f2f1; }
 .govuk-button--warning {
-background-color: #b10e1e;
-box-shadow: 0 2px 0 #47060c; }
+background-color: #d4351c;
+box-shadow: 0 2px 0 #55150b; }
 .govuk-button--warning, .govuk-button--warning:link, .govuk-button--warning:visited, .govuk-button--warning:active, .govuk-button--warning:hover {
 color: #ffffff; }
-.govuk-button--warning:hover, .govuk-button--warning:focus {
-background-color: #8e0b18; }
-.govuk-button--warning:hover[disabled], .govuk-button--warning:focus[disabled] {
-background-color: #b10e1e; }
+.govuk-button--warning:hover {
+background-color: #aa2a16; }
+.govuk-button--warning:hover[disabled] {
+background-color: #d4351c; }
 .govuk-button--start {
 font-weight: 700;
 font-size: 18px;
 font-size: 1.125rem;
 line-height: 1;
+display: -webkit-inline-box;
+display: -webkit-inline-flex;
+display: -ms-inline-flexbox;
+display: inline-flex;
 min-height: auto;
-padding-top: 8px;
-padding-right: 40px;
-padding-bottom: 8px;
-padding-left: 15px;
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAATCAMAAACwcE1OAAAAJFBMVEX///////////////////////////////////////8AAAD///8l0tt6AAAAC3RSTlNwj+5IYDChUKCAAJvFEkYAAABPSURBVHjadclJDoAwDAPAsKaY//8XBbXywfFcJ8ZbTvQC/Lbnb6bXD9N803xtfW2+tr429v9d513CdD4lIW2WzdWWleZqrz3Q9twLfXM7HzwAFbthf/TFAAAAAElFTkSuQmCC);
-background-repeat: no-repeat;
-background-position: 100% 50%; }
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+-ms-flex-pack: center;
+justify-content: center; }
 @media (min-width: 40.0625em) {
 .govuk-button--start {
 font-size: 24px;
@@ -1168,16 +1113,18 @@ line-height: 1; } }
 .govuk-button--start {
 font-size: 18pt;
 line-height: 1; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-.govuk-button--start {
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAmCAMAAACvbwi9AAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMAmWCfOe+PMB0mUKNaVuIAAAA5SURBVHgBY2DmhgNWdgYSwTDRzUWJbm6mUd2jukd1E8hjdNXMxIgALKN6QWBU76heNk4K9HKMAL0AqfELJxFKuhEAAAAASUVORK5CYII=);
-background-size: 30px 19px; } }
-.govuk-button {
-padding-top: 9px;
-padding-bottom: 6px; }
-.govuk-button--start {
-padding-top: 9px;
-padding-bottom: 6px; }
+.govuk-button__start-icon {
+margin-left: 5px;
+vertical-align: middle;
+-webkit-flex-shrink: 0;
+-ms-flex-negative: 0;
+flex-shrink: 0;
+-webkit-align-self: center;
+-ms-flex-item-align: center;
+align-self: center; }
+@media (min-width: 48.0625em) {
+.govuk-button__start-icon {
+margin-left: 10px; } }
 .govuk-error-message {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1189,7 +1136,7 @@ line-height: 1.25;
 display: block;
 margin-bottom: 15px;
 clear: both;
-color: #b10e1e; }
+color: #d4351c; }
 @media print {
 .govuk-error-message {
 font-family: sans-serif; } }
@@ -1229,7 +1176,6 @@ display: table;
 max-width: 100%;
 margin-bottom: 10px;
 padding: 0;
-overflow: hidden;
 white-space: normal; }
 @media print {
 .govuk-fieldset__legend {
@@ -1550,9 +1496,8 @@ display: block;
 padding-right: 15px;
 padding-left: 15px; }
 .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-outline: 3px solid transparent;
-outline-offset: 3px;
-box-shadow: 0 0 0 3px #ffbf47; }
+border-width: 4px;
+box-shadow: 0 0 0 3px #ffdd00; }
 .govuk-checkboxes__input:checked + .govuk-checkboxes__label::after {
 opacity: 1; }
 .govuk-checkboxes__input:disabled,
@@ -1564,7 +1509,7 @@ opacity: .5; }
 margin-bottom: 15px;
 margin-left: 18px;
 padding-left: 33px;
-border-left: 4px solid #bfc1c3; }
+border-left: 4px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-checkboxes__conditional {
 margin-bottom: 20px; } }
@@ -1608,14 +1553,14 @@ margin-left: 10px;
 padding-left: 20px;
 clear: both; }
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label::before {
-box-shadow: 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 10px #b1b4b6; }
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-box-shadow: 0 0 0 3px #ffbf47, 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 3px #ffdd00, 0 0 0 10px #b1b4b6; }
 @media (hover: none), (pointer: coarse) {
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label::before {
 box-shadow: initial; }
 .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-box-shadow: 0 0 0 3px #ffbf47; } }
+box-shadow: 0 0 0 3px #ffdd00; } }
 .govuk-character-count {
 margin-bottom: 20px; }
 @media (min-width: 40.0625em) {
@@ -1668,7 +1613,7 @@ margin-bottom: 30px; } }
 @media (max-width: 40.0525em) {
 .govuk-summary-list__row {
 margin-bottom: 15px;
-border-bottom: 1px solid #bfc1c3; } }
+border-bottom: 1px solid #b1b4b6; } }
 @media (min-width: 40.0625em) {
 .govuk-summary-list__row {
 display: table-row; } }
@@ -1688,7 +1633,7 @@ padding-right: 20px; } }
 .govuk-summary-list__actions {
 padding-top: 10px;
 padding-bottom: 10px;
-border-bottom: 1px solid #bfc1c3; } }
+border-bottom: 1px solid #b1b4b6; } }
 .govuk-summary-list__actions {
 margin-bottom: 15px; }
 @media (min-width: 40.0625em) {
@@ -1728,7 +1673,7 @@ display: inline;
 margin-right: 10px;
 padding-right: 10px; }
 .govuk-summary-list__actions-list-item:not(:last-child) {
-border-right: 1px solid #bfc1c3; }
+border-right: 1px solid #b1b4b6; }
 .govuk-summary-list__actions-list-item:last-child {
 margin-right: 0;
 padding-right: 0;
@@ -1782,8 +1727,9 @@ line-height: 1.3157894737; } }
 font-size: 14pt;
 line-height: 1.15; } }
 .govuk-input:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+outline: 3px solid #ffdd00;
+outline-offset: 0;
+box-shadow: inset 0 0 0 2px; }
 .govuk-input::-webkit-outer-spin-button,
 .govuk-input::-webkit-inner-spin-button {
 margin: 0;
@@ -1791,7 +1737,10 @@ margin: 0;
 .govuk-input[type="number"] {
 -moz-appearance: textfield; }
 .govuk-input--error {
-border: 4px solid #b10e1e; }
+border: 4px solid #d4351c; }
+.govuk-input--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-input--width-30 {
 max-width: 59ex; }
 .govuk-input--width-20 {
@@ -1854,23 +1803,26 @@ display: inline-block;
 position: relative;
 margin-bottom: 5px;
 padding-left: 25px;
-color: #005ea5;
+color: #1d70b8;
 cursor: pointer; }
+.govuk-details__summary:hover {
+color: #003078; }
+.govuk-details__summary:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-details__summary-text {
 text-decoration: underline; }
-.govuk-details__summary:hover {
-color: #2b8cc4; }
-.govuk-details__summary:focus {
-outline: 4px solid #ffbf47;
-outline-offset: -1px;
-color: #0b0c0c;
-background: #ffbf47; }
+.govuk-details__summary:focus .govuk-details__summary-text {
+text-decoration: none; }
 .govuk-details__summary::-webkit-details-marker {
 display: none; }
 .govuk-details__summary:before {
 content: "";
 position: absolute;
-top: 0;
+top: -1px;
 bottom: 0;
 left: 0;
 margin: auto;
@@ -1896,7 +1848,7 @@ border-top-color: inherit; }
 .govuk-details__text {
 padding: 15px;
 padding-left: 20px;
-border-left: 5px solid #bfc1c3; }
+border-left: 5px solid #b1b4b6; }
 .govuk-details__text p {
 margin-top: 0;
 margin-bottom: 20px; }
@@ -1906,7 +1858,7 @@ margin-bottom: 0; }
 color: #0b0c0c;
 padding: 15px;
 margin-bottom: 30px;
-border: 4px solid #b10e1e; }
+border: 5px solid #d4351c; }
 @media print {
 .govuk-error-summary {
 color: #000000; } }
@@ -1917,11 +1869,7 @@ padding: 20px; } }
 .govuk-error-summary {
 margin-bottom: 50px; } }
 .govuk-error-summary:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
-@media (min-width: 40.0625em) {
-.govuk-error-summary {
-border: 5px solid #b10e1e; } }
+outline: 3px solid #ffdd00; }
 .govuk-error-summary__title {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1978,14 +1926,14 @@ margin-top: 0;
 margin-bottom: 0; }
 .govuk-error-summary__list a {
 font-weight: 700; }
-.govuk-error-summary__list a:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
 .govuk-error-summary__list a:link, .govuk-error-summary__list a:visited, .govuk-error-summary__list a:hover, .govuk-error-summary__list a:active {
-color: #b10e1e; }
+color: #d4351c; }
 .govuk-error-summary__list a:focus {
-color: #0b0c0c; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-file-upload {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -1994,7 +1942,9 @@ font-weight: 400;
 font-size: 16px;
 font-size: 1rem;
 line-height: 1.25;
-color: #0b0c0c; }
+color: #0b0c0c;
+padding-top: 5px;
+padding-bottom: 5px; }
 @media print {
 .govuk-file-upload {
 font-family: sans-serif; } }
@@ -2011,10 +1961,31 @@ line-height: 1.15; } }
 .govuk-file-upload {
 color: #000000; } }
 .govuk-file-upload:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+margin-right: -5px;
+margin-left: -5px;
+padding-right: 5px;
+padding-left: 5px;
+outline: 3px solid #ffdd00;
+box-shadow: inset 0 0 0 4px #0b0c0c; }
+.govuk-file-upload:focus-within {
+margin-right: -5px;
+margin-left: -5px;
+padding-right: 5px;
+padding-left: 5px;
+outline: 3px solid #ffdd00;
+box-shadow: inset 0 0 0 4px #0b0c0c; }
 .govuk-file-upload--error {
-border: 4px solid #b10e1e; }
+margin-right: -5px;
+margin-left: -5px;
+padding-right: 5px;
+padding-left: 5px;
+border: 4px solid #d4351c; }
+.govuk-file-upload--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
+.govuk-file-upload--error:focus-within {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-footer {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2025,9 +1996,9 @@ font-size: 0.875rem;
 line-height: 1.1428571429;
 padding-top: 25px;
 padding-bottom: 15px;
-border-top: 1px solid #a1acb2;
-color: #454a4c;
-background: #dee0e2; }
+border-top: 1px solid #b1b4b6;
+color: #0b0c0c;
+background: #f3f2f1; }
 @media print {
 .govuk-footer {
 font-family: sans-serif; } }
@@ -2046,21 +2017,26 @@ padding-top: 40px; } }
 @media (min-width: 40.0625em) {
 .govuk-footer {
 padding-bottom: 25px; } }
-.govuk-footer__link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
-.govuk-footer__link:link, .govuk-footer__link:visited {
-color: #454a4c; }
-.govuk-footer__link:hover, .govuk-footer__link:active {
-color: #171819; }
-.govuk-footer__link:focus {
+.govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
 color: #0b0c0c; }
+.govuk-footer__link:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
+.govuk-footer__inline-list .govuk-footer__link,
+.govuk-footer__list .govuk-footer__link {
+text-decoration: none; }
+.govuk-footer__inline-list .govuk-footer__link:hover:not(:focus), .govuk-footer__inline-list .govuk-footer__link:active:not(:focus),
+.govuk-footer__list .govuk-footer__link:hover:not(:focus),
+.govuk-footer__list .govuk-footer__link:active:not(:focus) {
+text-decoration: underline; }
 .govuk-footer__section-break {
 margin: 0;
 margin-bottom: 30px;
 border: 0;
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-footer__section-break {
 margin-bottom: 50px; } }
@@ -2132,7 +2108,7 @@ margin-bottom: 5px; }
 .govuk-footer__heading {
 margin-bottom: 25px;
 padding-bottom: 20px;
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-footer__heading {
 margin-bottom: 40px; } }
@@ -2168,7 +2144,7 @@ flex-shrink: 1; }
 -ms-flex-preferred-size: 200px;
 flex-basis: 200px; } }
 @media (min-width: 48.0625em) {
-.govuk-footer__section:first-child {
+.govuk-footer__section:first-child:nth-last-child(2) {
 -webkit-box-flex: 2;
 -webkit-flex-grow: 2;
 -ms-flex-positive: 2;
@@ -2221,14 +2197,14 @@ font-size: 14pt;
 line-height: 1.2; } }
 .govuk-header__container--full-width {
 padding: 0 15px;
-border-color: #005ea5; }
+border-color: #1d70b8; }
 .govuk-header__container--full-width .govuk-header__menu-button {
 right: 15px; }
 .govuk-header__container {
 position: relative;
 margin-bottom: -10px;
 padding-top: 10px;
-border-bottom: 10px solid #005ea5; }
+border-bottom: 10px solid #1d70b8; }
 .govuk-header__container:after {
 content: "";
 display: block;
@@ -2236,9 +2212,11 @@ clear: both; }
 .govuk-header__logotype {
 margin-right: 5px; }
 .govuk-header__logotype-crown {
+position: relative;
+top: -1px;
 margin-right: 1px;
 fill: currentColor;
-vertical-align: middle; }
+vertical-align: top; }
 .govuk-header__logotype-crown-fallback-image {
 width: 36px;
 height: 32px;
@@ -2251,7 +2229,7 @@ font-family: sans-serif;
 font-weight: 400;
 font-size: 18px;
 font-size: 1.125rem;
-line-height: 1.1111111111;
+line-height: 1;
 display: inline-table;
 padding-right: 10px; }
 @media print {
@@ -2261,23 +2239,23 @@ font-family: sans-serif; } }
 .govuk-header__product-name {
 font-size: 24px;
 font-size: 1.5rem;
-line-height: 1.25; } }
+line-height: 1; } }
 @media print {
 .govuk-header__product-name {
 font-size: 18pt;
-line-height: 1.15; } }
+line-height: 1; } }
 .govuk-header__link {
 text-decoration: none; }
-.govuk-header__link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
 .govuk-header__link:link, .govuk-header__link:visited {
 color: #ffffff; }
 .govuk-header__link:hover {
 text-decoration: underline; }
 .govuk-header__link:focus {
-color: #0b0c0c; }
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-header__link--homepage {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2285,7 +2263,7 @@ font-family: sans-serif;
 font-weight: 700;
 display: inline-block;
 font-size: 30px;
-line-height: 30px; }
+line-height: 1; }
 @media print {
 .govuk-header__link--homepage {
 font-family: sans-serif; } }
@@ -2294,6 +2272,9 @@ text-decoration: none; }
 .govuk-header__link--homepage:hover, .govuk-header__link--homepage:active {
 margin-bottom: -1px;
 border-bottom: 1px solid; }
+.govuk-header__link--homepage:focus {
+margin-bottom: 0;
+border-bottom: 0; }
 .govuk-header__link--service-name {
 display: inline-block;
 margin-bottom: 10px;
@@ -2367,6 +2348,12 @@ font-size: 14pt;
 line-height: 1.2; } }
 .govuk-header__menu-button:hover {
 text-decoration: underline; }
+.govuk-header__menu-button:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+text-decoration: none; }
 .govuk-header__menu-button::after {
 display: inline-block;
 width: 0;
@@ -2379,9 +2366,6 @@ border-width: 8.66px 5px 0 5px;
 border-top-color: inherit;
 content: "";
 margin-left: 5px; }
-.govuk-header__menu-button:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
 @media (min-width: 40.0625em) {
 .govuk-header__menu-button {
 top: 15px; } }
@@ -2470,11 +2454,6 @@ display: none; }
 color: #0b0c0c; }
 .govuk-header__link:after {
 display: none; } }
-.govuk-header__logotype-crown {
-position: relative;
-top: -4px; }
-.govuk-header {
-padding-top: 3px; }
 .govuk-inset-text {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2488,7 +2467,7 @@ padding: 15px;
 margin-top: 20px;
 margin-bottom: 20px;
 clear: both;
-border-left: 10px solid #bfc1c3; }
+border-left: 10px solid #b1b4b6; }
 @media print {
 .govuk-inset-text {
 font-family: sans-serif; } }
@@ -2545,7 +2524,7 @@ line-height: 1.15; } }
 padding: 25px; } }
 .govuk-panel--confirmation {
 color: #ffffff;
-background: #28a197; }
+background: #00703c; }
 .govuk-panel__title {
 margin-top: 0;
 margin-bottom: 30px;
@@ -2591,23 +2570,25 @@ line-height: 1.1111111111; } }
 font-size: 24pt;
 line-height: 1.05; } }
 .govuk-tag {
+display: inline-block;
+outline: 2px solid transparent;
+outline-offset: -2px;
+color: #ffffff;
+background-color: #1d70b8;
+letter-spacing: 1px;
+text-decoration: none;
+text-transform: uppercase;
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 font-weight: 700;
 font-size: 14px;
 font-size: 0.875rem;
-line-height: 1.25;
-display: inline-block;
-padding: 4px 8px;
-padding-bottom: 1px;
-outline: 2px solid transparent;
-outline-offset: -2px;
-color: #ffffff;
-background-color: #005ea5;
-letter-spacing: 1px;
-text-decoration: none;
-text-transform: uppercase; }
+line-height: 1;
+padding-top: 5px;
+padding-right: 8px;
+padding-bottom: 4px;
+padding-left: 8px; }
 @media print {
 .govuk-tag {
 font-family: sans-serif; } }
@@ -2615,17 +2596,17 @@ font-family: sans-serif; } }
 .govuk-tag {
 font-size: 16px;
 font-size: 1rem;
-line-height: 1.25; } }
+line-height: 1; } }
 @media print {
 .govuk-tag {
 font-size: 14pt;
-line-height: 1.25; } }
+line-height: 1; } }
 .govuk-tag--inactive {
 background-color: #6f777b; }
 .govuk-phase-banner {
 padding-top: 10px;
 padding-bottom: 10px;
-border-bottom: 1px solid #bfc1c3; }
+border-bottom: 1px solid #b1b4b6; }
 .govuk-phase-banner__content {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2658,31 +2639,8 @@ margin-right: 10px; }
 display: table-cell;
 vertical-align: baseline; }
 .govuk-tabs {
-font-family: sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-font-weight: 400;
-font-size: 16px;
-font-size: 1rem;
-line-height: 1.25;
-color: #0b0c0c;
 margin-top: 5px;
 margin-bottom: 20px; }
-@media print {
-.govuk-tabs {
-font-family: sans-serif; } }
-@media (min-width: 40.0625em) {
-.govuk-tabs {
-font-size: 19px;
-font-size: 1.1875rem;
-line-height: 1.3157894737; } }
-@media print {
-.govuk-tabs {
-font-size: 14pt;
-line-height: 1.15; } }
-@media print {
-.govuk-tabs {
-color: #000000; } }
 @media (min-width: 40.0625em) {
 .govuk-tabs {
 margin-top: 5px; } }
@@ -2697,7 +2655,8 @@ font-weight: 400;
 font-size: 16px;
 font-size: 1rem;
 line-height: 1.25;
-margin-bottom: 5px; }
+color: #0b0c0c;
+margin-bottom: 10px; }
 @media print {
 .govuk-tabs__title {
 font-family: sans-serif; } }
@@ -2710,26 +2669,18 @@ line-height: 1.3157894737; } }
 .govuk-tabs__title {
 font-size: 14pt;
 line-height: 1.15; } }
+@media print {
+.govuk-tabs__title {
+color: #000000; } }
 .govuk-tabs__list {
 margin: 0;
 padding: 0;
-list-style: none; }
-@media (max-width: 40.0525em) {
-.govuk-tabs__list {
-margin-bottom: 20px; } }
-@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+list-style: none;
+margin-bottom: 20px; }
+@media (min-width: 40.0625em) {
 .govuk-tabs__list {
 margin-bottom: 30px; } }
 .govuk-tabs__list-item {
-margin-left: 25px; }
-.govuk-tabs__list-item::before {
-content: "\2014 ";
-margin-left: -25px;
-padding-right: 5px; }
-.govuk-tabs__tab {
-font-family: sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -2737,40 +2688,45 @@ font-weight: 400;
 font-size: 16px;
 font-size: 1rem;
 line-height: 1.25;
-display: inline-block;
-padding-top: 10px;
-padding-bottom: 10px; }
+margin-left: 25px; }
 @media print {
-.govuk-tabs__tab {
-font-family: sans-serif; } }
-.govuk-tabs__tab:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
-.govuk-tabs__tab:link {
-color: #005ea5; }
-.govuk-tabs__tab:visited {
-color: #4c2c92; }
-.govuk-tabs__tab:hover {
-color: #2b8cc4; }
-.govuk-tabs__tab:active {
-color: #2b8cc4; }
-.govuk-tabs__tab:focus {
-color: #0b0c0c; }
-@media print {
-.govuk-tabs__tab {
+.govuk-tabs__list-item {
 font-family: sans-serif; } }
 @media (min-width: 40.0625em) {
-.govuk-tabs__tab {
+.govuk-tabs__list-item {
 font-size: 19px;
 font-size: 1.1875rem;
 line-height: 1.3157894737; } }
 @media print {
-.govuk-tabs__tab {
+.govuk-tabs__list-item {
 font-size: 14pt;
 line-height: 1.15; } }
-.govuk-tabs__tab[aria-current="true"] {
+.govuk-tabs__list-item::before {
 color: #0b0c0c;
+content: "\2014 ";
+margin-left: -25px;
+padding-right: 5px; }
+@media print {
+.govuk-tabs__list-item::before {
+color: #000000; } }
+.govuk-tabs__tab {
+display: inline-block;
+margin-bottom: 10px; }
+.govuk-tabs__tab:link {
+color: #1d70b8; }
+.govuk-tabs__tab:visited {
+color: #4c2c92; }
+.govuk-tabs__tab:hover {
+color: #003078; }
+.govuk-tabs__tab:active {
+color: #0b0c0c; }
+.govuk-tabs__tab:focus {
+color: #0b0c0c; }
+.govuk-tabs__tab:focus {
+outline: 3px solid transparent;
+color: #0b0c0c;
+background-color: #ffdd00;
+box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
 text-decoration: none; }
 .govuk-tabs__panel {
 margin-bottom: 30px; }
@@ -2779,55 +2735,66 @@ margin-bottom: 30px; }
 margin-bottom: 50px; } }
 @media (min-width: 40.0625em) {
 .js-enabled .govuk-tabs__list {
-border-bottom: 1px solid #bfc1c3; }
+margin-bottom: 0;
+border-bottom: 1px solid #b1b4b6; }
 .js-enabled .govuk-tabs__list:after {
 content: "";
 display: block;
 clear: both; }
-.js-enabled .govuk-tabs__list-item {
-margin-left: 0; }
-.js-enabled .govuk-tabs__list-item::before {
-content: none; }
 .js-enabled .govuk-tabs__title {
 display: none; }
-.js-enabled .govuk-tabs__tab {
+.js-enabled .govuk-tabs__list-item {
+position: relative;
 margin-right: 5px;
-padding-right: 20px;
-padding-left: 20px;
+margin-bottom: 0;
+margin-left: 0;
+padding: 10px 20px;
 float: left;
-color: #0b0c0c;
-background-color: #f8f8f8;
-text-align: center;
-text-decoration: none; }
-.js-enabled .govuk-tabs__tab--selected {
+background-color: #f3f2f1;
+text-align: center; }
+.js-enabled .govuk-tabs__list-item::before {
+content: none; }
+.js-enabled .govuk-tabs__list-item--selected {
+position: relative;
 margin-top: -5px;
 margin-bottom: -1px;
 padding-top: 14px;
 padding-right: 19px;
 padding-bottom: 16px;
 padding-left: 19px;
-border: 1px solid #bfc1c3;
+border: 1px solid #b1b4b6;
 border-bottom: 0;
-color: #0b0c0c;
 background-color: #ffffff; }
-.js-enabled .govuk-tabs__tab--selected:focus {
-background-color: transparent; }
+.js-enabled .govuk-tabs__list-item--selected .govuk-tabs__tab {
+text-decoration: none; }
+.js-enabled .govuk-tabs__tab {
+margin-bottom: 0; }
+.js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited, .js-enabled .govuk-tabs__tab:hover, .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+color: #0b0c0c; } }
+@media print and (min-width: 40.0625em) {
+.js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited, .js-enabled .govuk-tabs__tab:hover, .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+color: #000000; } }
+@media (min-width: 40.0625em) {
+.js-enabled .govuk-tabs__tab::after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0; }
 .js-enabled .govuk-tabs__panel {
 margin-bottom: 0;
-padding-top: 30px;
-padding-right: 20px;
-padding-bottom: 30px;
-padding-left: 20px;
-border: 1px solid #bfc1c3;
+padding: 30px 20px;
+border: 1px solid #b1b4b6;
 border-top: 0; } }
 @media (min-width: 40.0625em) and (min-width: 40.0625em) {
 .js-enabled .govuk-tabs__panel {
 margin-bottom: 0; } }
 @media (min-width: 40.0625em) {
-.js-enabled .govuk-tabs__panel--hidden {
-display: none; }
 .js-enabled .govuk-tabs__panel > :last-child {
-margin-bottom: 0; } }
+margin-bottom: 0; }
+.js-enabled .govuk-tabs__panel--hidden {
+display: none; } }
 .govuk-radios__item {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -2901,9 +2868,8 @@ display: block;
 padding-right: 15px;
 padding-left: 15px; }
 .govuk-radios__input:focus + .govuk-radios__label::before {
-outline: 3px solid transparent;
-outline-offset: 3px;
-box-shadow: 0 0 0 4px #ffbf47; }
+border-width: 4px;
+box-shadow: 0 0 0 4px #ffdd00; }
 .govuk-radios__input:checked + .govuk-radios__label::after {
 opacity: 1; }
 .govuk-radios__input:disabled,
@@ -2954,7 +2920,7 @@ color: #000000; } }
 margin-bottom: 15px;
 margin-left: 18px;
 padding-left: 33px;
-border-left: 4px solid #bfc1c3; }
+border-left: 4px solid #b1b4b6; }
 @media (min-width: 40.0625em) {
 .govuk-radios__conditional {
 margin-bottom: 20px; } }
@@ -2985,9 +2951,9 @@ top: 8px;
 width: 24px;
 height: 24px; }
 .govuk-radios--small .govuk-radios__label::after {
-top: 14px;
-left: 6px;
-border-width: 6px; }
+top: 15px;
+left: 7px;
+border-width: 5px; }
 .govuk-radios--small .govuk-radios__hint {
 padding: 0;
 clear: both;
@@ -3000,14 +2966,14 @@ clear: both; }
 width: 24px;
 margin-bottom: 5px; }
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
-box-shadow: 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 10px #b1b4b6; }
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-box-shadow: 0 0 0 4px #ffbf47, 0 0 0 10px #dee0e2; }
+box-shadow: 0 0 0 4px #ffdd00, 0 0 0 10px #b1b4b6; }
 @media (hover: none), (pointer: coarse) {
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
 box-shadow: initial; }
 .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-box-shadow: 0 0 0 4px #ffbf47; } }
+box-shadow: 0 0 0 4px #ffdd00; } }
 .govuk-select {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -3034,15 +3000,19 @@ line-height: 1.25; } }
 font-size: 14pt;
 line-height: 1.25; } }
 .govuk-select:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
+outline: 3px solid #ffdd00;
+outline-offset: 0;
+box-shadow: inset 0 0 0 2px; }
 .govuk-select option:active,
 .govuk-select option:checked,
 .govuk-select:focus::-ms-value {
 color: #ffffff;
-background-color: #005ea5; }
+background-color: #1d70b8; }
 .govuk-select--error {
-border: 4px solid #b10e1e; }
+border: 4px solid #d4351c; }
+.govuk-select--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-skip-link {
 position: absolute !important;
 width: 1px !important;
@@ -3074,10 +3044,6 @@ white-space: inherit !important; }
 @media print {
 .govuk-skip-link {
 font-family: sans-serif; } }
-.govuk-skip-link:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0;
-background-color: #ffbf47; }
 .govuk-skip-link:link, .govuk-skip-link:visited, .govuk-skip-link:hover, .govuk-skip-link:active, .govuk-skip-link:focus {
 color: #0b0c0c; }
 @media print {
@@ -3096,6 +3062,9 @@ line-height: 1.2; } }
 .govuk-skip-link {
 padding-right: max(15px, calc(15px + env(safe-area-inset-right)));
 padding-left: max(15px, calc(15px + env(safe-area-inset-left))); } }
+.govuk-skip-link:focus {
+outline: 3px solid #ffdd00;
+background-color: #ffdd00; }
 .govuk-table {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -3132,16 +3101,24 @@ font-weight: 700; }
 .govuk-table__header,
 .govuk-table__cell {
 padding: 10px 20px 10px 0;
-border-bottom: 1px solid #bfc1c3;
-text-align: left; }
+border-bottom: 1px solid #b1b4b6;
+text-align: left;
+vertical-align: top; }
 .govuk-table__cell--numeric {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
+-webkit-font-feature-settings: "tnum" 1;
+font-feature-settings: "tnum" 1;
 font-weight: 400; }
 @media print {
 .govuk-table__cell--numeric {
 font-family: sans-serif; } }
+@supports (font-variant-numeric: tabular-nums) {
+.govuk-table__cell--numeric {
+-webkit-font-feature-settings: normal;
+font-feature-settings: normal;
+font-variant-numeric: tabular-nums; } }
 .govuk-table__header--numeric,
 .govuk-table__cell--numeric {
 text-align: right; }
@@ -3182,14 +3159,18 @@ line-height: 1.25; } }
 .govuk-textarea {
 font-size: 14pt;
 line-height: 1.25; } }
-.govuk-textarea:focus {
-outline: 3px solid #ffbf47;
-outline-offset: 0; }
 @media (min-width: 40.0625em) {
 .govuk-textarea {
 margin-bottom: 30px; } }
+.govuk-textarea:focus {
+outline: 3px solid #ffdd00;
+outline-offset: 0;
+box-shadow: inset 0 0 0 2px; }
 .govuk-textarea--error {
-border: 4px solid #b10e1e; }
+border: 4px solid #d4351c; }
+.govuk-textarea--error:focus {
+border-color: #0b0c0c;
+box-shadow: none; }
 .govuk-warning-text {
 font-family: sans-serif;
 -webkit-font-smoothing: antialiased;
@@ -3945,8 +3926,12 @@ margin-top: 0;
 margin-bottom: 15px;
 padding: 15px;
 overflow: auto;
-border: 1px solid #bfc1c3;
+border: 1px solid #b1b4b6;
 background-color: #f8f8f8; }
+pre,
+code {
+font-family: monospace, monospace;
+font-size: 1em; }
 .sourceCode + .govuk-heading-l, .sourceCode + .govuk-heading-l {
 padding-top: 5px; }
 @media (min-width: 40.0625em) {
@@ -4343,7 +4328,7 @@ As the code is stored on Github we can access the current master version as well
 <p class="govuk-body">
 Installation means the package is on our computer but it is not loaded into the computer’s working memory. We also load any additional packages that might be useful for exploring the package or data therein.
 </p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">'ukgovdatascience/eesectors'</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>devtools::install_github('ukgovdatascience/eesectors')</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## eesectors: Reproducible Analytical Pipeline (RAP) for the
 ## Economic Estimates for DCMS Sectors Statistical First Release
 ## (SFR). For more information visit:
@@ -4377,13 +4362,13 @@ If you look at the functions within the package within R Studio using the packag
 <p class="govuk-body">
 The <code>GVA_by_sector_2016</code> provides test data to work with during development. This will be important for the development of other packages for different reports. You need a precise understanding of how you go from raw data, to aggregated data (such as <code>GVA_by_sector_2016</code>) to the final figure. What are your inputs (arguments) and outputs? In some cases where your master data is stored in a particularly difficult for a machine to read you may prefer having a human to this extraction step.
 </p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">dplyr<span class="op">::</span><span class="kw">glimpse</span>(GVA_by_sector_<span class="dv">2016</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>dplyr::glimpse(GVA_by_sector_2016)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## Observations: 54
 ## Variables: 3
 ## $ sector &lt;fct&gt; creative, culture, digital, gambling, sport, telecoms, to…
 ## $ year   &lt;int&gt; 2010, 2010, 2010, 2010, 2010, 2010, 2010, 2011, 2011, 201…
 ## $ GVA    &lt;dbl&gt; 65188, 20291, 97303, 8407, 7016, 24738, 49150, 69398, 209…</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">x &lt;-<span class="st"> </span>GVA_by_sector_<span class="dv">2016</span></a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>x &lt;- GVA_by_sector_2016</code></pre>
 <h4 id="automating-qa" class="govuk-heading-s">Automating QA</h4>
 <p class="govuk-body">
 Human’s are not particularly good at Quality Assurance (QA), especially when working with massive spreadsheets it’s easy for errors to creep in. We can automate alot of the sense checking and update this if things change or a human provides another creative test to use for sense checking. If you can describe the test to a colleague then you can code it.
@@ -4391,7 +4376,7 @@ Human’s are not particularly good at Quality Assurance (QA), especially when w
 <p class="govuk-body">
 The author uses messages to tell us what checks are being conducted or we can look at the body of the function if we are interested. This is useful if you are considering developing your own package, it will help you struture the message which are useful for the user.
 </p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">gva &lt;-<span class="st"> </span><span class="kw">year_sector_data</span>(GVA_by_sector_<span class="dv">2016</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>gva &lt;- year_sector_data(GVA_by_sector_2016)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## Warning: `assert_` is deprecated and will eventually be removed from
 ## assertr. Please use `assert` instead.
 
@@ -4428,7 +4413,7 @@ The author uses messages to tell us what checks are being conducted or we can lo
 <p class="govuk-body">
 This is a semi-automated process so the user should check the Checks and ensure they meet their usual checks that would be conducted manually. If a new check or test becomes necessary then it should be implemented by changing the code.
 </p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">body</span>(year_sector_data)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>body(year_sector_data)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## {
 ##     futile.logger::flog.threshold(log_level)
 ##     if (log_appender != &quot;console&quot;) {
@@ -4494,9 +4479,9 @@ This is a semi-automated process so the user should check the Checks and ensure 
 <p class="govuk-body">
 The function is structured to tell the user what check is being made and then running that check given the input <code>x</code>. If the input fails a check the function is stopped with a useful diagnostic message for the user. This is achieved using <code>if</code> and the opposite of the desired feature of <code>x</code>.
 </p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">    <span class="kw">message</span>(<span class="st">&quot;Checking x has correct columns...&quot;</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">    <span class="cf">if</span> (<span class="kw">length</span>(<span class="kw">colnames</span>(x)) <span class="op">!=</span><span class="st"> </span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">        <span class="kw">stop</span>(<span class="st">&quot;x must have three columns: sector, year, and one of GVA, export, or x&quot;</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>    message(&quot;Checking x has correct columns...&quot;)
+    if (length(colnames(x)) != 3)
+        stop(&quot;x must have three columns: sector, year, and one of GVA, export, or x&quot;)</code></pre>
 <p class="govuk-body">
 For example, if <code>x</code> does not have exactly three columns we <code>stop</code>.
 </p>
@@ -4504,21 +4489,21 @@ For example, if <code>x</code> does not have exactly three columns we <code>stop
 <p class="govuk-body">
 The output object is different to the input as expected, yet it does contain the initial data.
 </p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">identical</span>(gva<span class="op">$</span>df, x)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>identical(gva$df, x)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## [1] TRUE</code></pre>
 <p class="govuk-body">
 The rest of the list contains other details that could be changed at a later date if required, demonstrating defensive programming. For example, the sectors that are of interest to DCMS have changed and may change again.
 </p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">?year_sector_data</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>?year_sector_data</code></pre>
 <p class="govuk-body">
 Let’s take a closer look at this function using the help and other standard function exploration functions.
 </p>
 <p class="govuk-body">
 The help says it produces a custom class of object with five slots.
 </p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">isS4</span>(gva)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>isS4(gva)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">class</span>(gva)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>class(gva)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## [1] &quot;year_sector_data&quot;</code></pre>
 <p class="govuk-body">
 It’s not actually an S4 object, by slots the author means a list of objects. This approach is sensible and easy to work with, as most users are familiar with <a href="http://adv-r.had.co.nz/S3.html" class="govuk-link">S3</a>.
@@ -4527,7 +4512,7 @@ It’s not actually an S4 object, by slots the author means a list of objects. T
 <p class="govuk-body">
 The input, which is likely a bunch of <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html" class="govuk-link">not tidy or messy</a> spreadsheets needs to be wrangled and aggregated (if necessary) for input into the functions prefixed by <code>figure</code>.
 </p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">dplyr<span class="op">::</span><span class="kw">glimpse</span>(GVA_by_sector_<span class="dv">2016</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>dplyr::glimpse(GVA_by_sector_2016)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## Observations: 54
 ## Variables: 3
 ## $ sector &lt;fct&gt; creative, culture, digital, gambling, sport, telecoms, to…
@@ -4542,7 +4527,7 @@ We build our functions to use the same simple, tidy, data. - Matt Upson
 <p class="govuk-body">
 With the data in the appropriate form to be received as an argument or input for the <code>figure</code> family of functions, we can proceed to plot.
 </p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">figure3.1</span>(<span class="dt">x =</span> gva)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>figure3.1(x = gva)</code></pre>
 <p class="govuk-body">
 <img src="data:image/png;base64,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" />
 </p>
@@ -4552,7 +4537,7 @@ Again we can look at the details of the plot. We could change the body of the fu
 <p class="govuk-body">
 Reading the code we see it filters the data, makes the variables it needs, refactors the <code>sector</code> variable and then plots it.
 </p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">body</span>(figure3<span class="fl">.1</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>body(figure3.1)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## {
 ##     out &lt;- tryCatch(expr = {
 ##         sectors_set &lt;- x$sectors_set
@@ -4581,7 +4566,7 @@ We can inspect and change an argument if we feel inclined or if a new colour sch
 <p class="govuk-body">
 This all looks straight forward and we can inspect the other functions for generating the figures or plot output.
 </p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">body</span>(figure3<span class="fl">.2</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>body(figure3.2)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## {
 ##     out &lt;- tryCatch(expr = {
 ##         sectors_set &lt;- x$sectors_set
@@ -4606,7 +4591,7 @@ This all looks straight forward and we can inspect the other functions for gener
 ##     }, finally = {
 ##     })
 ## }</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">body</span>(figure3<span class="fl">.3</span>)</a></code></pre></div>
+<pre class="r app-tabs__container js-tabs__container"><code>body(figure3.3)</code></pre>
 <pre class="app-tabs__container js-tabs__container"><code>## {
 ##     out &lt;- tryCatch(expr = {
 ##         sectors_set &lt;- x$sectors_set
@@ -5958,28 +5943,21 @@ if (detect) return
 })
 .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
-/**
- * JavaScript 'shim' to trigger the click event of element(s) when the space key is pressed.
- *
- * Created since some Assistive Technologies (for example some Screenreaders)
- * will tell a user to press space on a 'button', so this functionality needs to be shimmed
- * See https://github.com/alphagov/govuk_elements/pull/272#issuecomment-233028270
- *
- * Usage instructions:
- * the 'shim' will be automatically initialised
- */
-
 var KEY_SPACE = 32;
 var DEBOUNCE_TIMEOUT_IN_SECONDS = 1;
-var debounceFormSubmitTimer = null;
 
 function Button ($module) {
   this.$module = $module;
+  this.debounceFormSubmitTimer = null;
 }
 
 /**
-* if the event target element has a role='button' and the event is key space pressed
-* then it prevents the default event and triggers a click event
+* JavaScript 'shim' to trigger the click event of element(s) when the space key is pressed.
+*
+* Created since some Assistive Technologies (for example some Screenreaders)
+* will tell a user to press space on a 'button', so this functionality needs to be shimmed
+* See https://github.com/alphagov/govuk_elements/pull/272#issuecomment-233028270
+*
 * @param {object} event event
 */
 Button.prototype.handleKeyDown = function (event) {
@@ -6006,14 +5984,14 @@ Button.prototype.debounce = function (event) {
   }
 
   // If the timer is still running then we want to prevent the click from submitting the form
-  if (debounceFormSubmitTimer) {
+  if (this.debounceFormSubmitTimer) {
     event.preventDefault();
     return false
   }
 
-  debounceFormSubmitTimer = setTimeout(function () {
-    debounceFormSubmitTimer = null;
-  }, DEBOUNCE_TIMEOUT_IN_SECONDS * 1000);
+  this.debounceFormSubmitTimer = setTimeout(function () {
+    this.debounceFormSubmitTimer = null;
+  }.bind(this), DEBOUNCE_TIMEOUT_IN_SECONDS * 1000);
 };
 
 /**
@@ -6030,27 +6008,112 @@ Button.prototype.init = function () {
  * and 'shim' to add accessiblity enhancements for all browsers
  *
  * http://caniuse.com/#feat=details
- *
- * Usage instructions:
- * the 'polyfill' will be automatically initialised
  */
 
 var KEY_ENTER = 13;
 var KEY_SPACE$1 = 32;
 
-// Create a flag to know if the browser supports navtive details
-var NATIVE_DETAILS = typeof document.createElement('details').open === 'boolean';
-
 function Details ($module) {
   this.$module = $module;
 }
+
+Details.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+
+  // If there is native details support, we want to avoid running code to polyfill native behaviour.
+  var hasNativeDetails = typeof this.$module.open === 'boolean';
+
+  if (hasNativeDetails) {
+    return
+  }
+
+  this.polyfillDetails();
+};
+
+Details.prototype.polyfillDetails = function () {
+  var $module = this.$module;
+
+  // Save shortcuts to the inner summary and content elements
+  var $summary = this.$summary = $module.getElementsByTagName('summary').item(0);
+  var $content = this.$content = $module.getElementsByTagName('div').item(0);
+
+  // If <details> doesn't have a <summary> and a <div> representing the content
+  // it means the required HTML structure is not met so the script will stop
+  if (!$summary || !$content) {
+    return
+  }
+
+  // If the content doesn't have an ID, assign it one now
+  // which we'll need for the summary's aria-controls assignment
+  if (!$content.id) {
+    $content.id = 'details-content-' + generateUniqueID();
+  }
+
+  // Add ARIA role="group" to details
+  $module.setAttribute('role', 'group');
+
+  // Add role=button to summary
+  $summary.setAttribute('role', 'button');
+
+  // Add aria-controls
+  $summary.setAttribute('aria-controls', $content.id);
+
+  // Set tabIndex so the summary is keyboard accessible for non-native elements
+  //
+  // We have to use the camelcase `tabIndex` property as there is a bug in IE6/IE7 when we set the correct attribute lowercase:
+  // See http://web.archive.org/web/20170120194036/http://www.saliences.com/browserBugs/tabIndex.html for more information.
+  $summary.tabIndex = 0;
+
+  // Detect initial open state
+  var openAttr = $module.getAttribute('open') !== null;
+  if (openAttr === true) {
+    $summary.setAttribute('aria-expanded', 'true');
+    $content.setAttribute('aria-hidden', 'false');
+  } else {
+    $summary.setAttribute('aria-expanded', 'false');
+    $content.setAttribute('aria-hidden', 'true');
+    $content.style.display = 'none';
+  }
+
+  // Bind an event to handle summary elements
+  this.polyfillHandleInputs($summary, this.polyfillSetAttributes.bind(this));
+};
+
+/**
+* Define a statechange function that updates aria-expanded and style.display
+* @param {object} summary element
+*/
+Details.prototype.polyfillSetAttributes = function () {
+  var $module = this.$module;
+  var $summary = this.$summary;
+  var $content = this.$content;
+
+  var expanded = $summary.getAttribute('aria-expanded') === 'true';
+  var hidden = $content.getAttribute('aria-hidden') === 'true';
+
+  $summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
+  $content.setAttribute('aria-hidden', (hidden ? 'false' : 'true'));
+
+  $content.style.display = (expanded ? 'none' : '');
+
+  var hasOpenAttr = $module.getAttribute('open') !== null;
+  if (!hasOpenAttr) {
+    $module.setAttribute('open', 'open');
+  } else {
+    $module.removeAttribute('open');
+  }
+
+  return true
+};
 
 /**
 * Handle cross-modal click events
 * @param {object} node element
 * @param {function} callback function
 */
-Details.prototype.handleInputs = function (node, callback) {
+Details.prototype.polyfillHandleInputs = function (node, callback) {
   node.addEventListener('keypress', function (event) {
     var target = event.target;
     // When the key gets pressed - check if it is enter or space
@@ -6083,102 +6146,9 @@ Details.prototype.handleInputs = function (node, callback) {
   node.addEventListener('click', callback);
 };
 
-Details.prototype.init = function () {
-  var $module = this.$module;
-
-  if (!$module) {
-    return
-  }
-
-  // Save shortcuts to the inner summary and content elements
-  var $summary = this.$summary = $module.getElementsByTagName('summary').item(0);
-  var $content = this.$content = $module.getElementsByTagName('div').item(0);
-
-  // If <details> doesn't have a <summary> and a <div> representing the content
-  // it means the required HTML structure is not met so the script will stop
-  if (!$summary || !$content) {
-    return
-  }
-
-  // If the content doesn't have an ID, assign it one now
-  // which we'll need for the summary's aria-controls assignment
-  if (!$content.id) {
-    $content.id = 'details-content-' + generateUniqueID();
-  }
-
-  // Add ARIA role="group" to details
-  $module.setAttribute('role', 'group');
-
-  // Add role=button to summary
-  $summary.setAttribute('role', 'button');
-
-  // Add aria-controls
-  $summary.setAttribute('aria-controls', $content.id);
-
-  // Set tabIndex so the summary is keyboard accessible for non-native elements
-  // http://www.saliences.com/browserBugs/tabIndex.html
-  if (!NATIVE_DETAILS) {
-    $summary.tabIndex = 0;
-  }
-
-  // Detect initial open state
-  var openAttr = $module.getAttribute('open') !== null;
-  if (openAttr === true) {
-    $summary.setAttribute('aria-expanded', 'true');
-    $content.setAttribute('aria-hidden', 'false');
-  } else {
-    $summary.setAttribute('aria-expanded', 'false');
-    $content.setAttribute('aria-hidden', 'true');
-    if (!NATIVE_DETAILS) {
-      $content.style.display = 'none';
-    }
-  }
-
-  // Bind an event to handle summary elements
-  this.handleInputs($summary, this.setAttributes.bind(this));
-};
-
-/**
-* Define a statechange function that updates aria-expanded and style.display
-* @param {object} summary element
-*/
-Details.prototype.setAttributes = function () {
-  var $module = this.$module;
-  var $summary = this.$summary;
-  var $content = this.$content;
-
-  var expanded = $summary.getAttribute('aria-expanded') === 'true';
-  var hidden = $content.getAttribute('aria-hidden') === 'true';
-
-  $summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
-  $content.setAttribute('aria-hidden', (hidden ? 'false' : 'true'));
-
-  if (!NATIVE_DETAILS) {
-    $content.style.display = (expanded ? 'none' : '');
-
-    var hasOpenAttr = $module.getAttribute('open') !== null;
-    if (!hasOpenAttr) {
-      $module.setAttribute('open', 'open');
-    } else {
-      $module.removeAttribute('open');
-    }
-  }
-  return true
-};
-
-/**
-* Remove the click event from the node element
-* @param {object} node element
-*/
-Details.prototype.destroy = function (node) {
-  node.removeEventListener('keypress');
-  node.removeEventListener('keyup');
-  node.removeEventListener('click');
-};
-
 function CharacterCount ($module) {
   this.$module = $module;
-  this.$textarea = $module.querySelector('.js-character-count');
+  this.$textarea = $module.querySelector('.govuk-js-character-count');
 }
 
 CharacterCount.prototype.defaults = {
@@ -6318,8 +6288,12 @@ CharacterCount.prototype.updateCountMessage = function () {
   var thresholdValue = maxLength * thresholdPercent / 100;
   if (thresholdValue > currentLength) {
     countMessage.classList.add('govuk-character-count__message--disabled');
+    // Ensure threshold is hidden for users of assistive technologies
+    countMessage.setAttribute('aria-hidden', true);
   } else {
     countMessage.classList.remove('govuk-character-count__message--disabled');
+    // Ensure threshold is visible for users of assistive technologies
+    countMessage.removeAttribute('aria-hidden');
   }
 
   // Update styles
@@ -6520,16 +6494,6 @@ ErrorSummary.prototype.focusTarget = function ($target) {
     return false
   }
 
-  // Prefer using the history API where possible, as updating
-  // window.location.hash causes the viewport to jump to the input briefly
-  // before then scrolling to the label/legend in IE10, IE11 and Edge (as tested
-  // in Edge 17).
-  if (window.history.pushState) {
-    window.history.pushState(null, null, '#' + inputId);
-  } else {
-    window.location.hash = inputId;
-  }
-
   // Scroll the legend or label into view *before* calling focus on the input to
   // avoid extra scrolling in browsers that don't support `preventScroll` (which
   // at time of writing is most of them...)
@@ -6596,7 +6560,7 @@ Header.prototype.init = function () {
   }
 
   // Check for button
-  var $toggleButton = $module.querySelector('.js-header-toggle');
+  var $toggleButton = $module.querySelector('.govuk-js-header-toggle');
   if (!$toggleButton) {
     return
   }
@@ -6639,12 +6603,11 @@ Header.prototype.handleClick = function (event) {
 
 function Radios ($module) {
   this.$module = $module;
-  this.$inputs = $module.querySelectorAll('input[type="radio"]');
 }
 
 Radios.prototype.init = function () {
   var $module = this.$module;
-  var $inputs = this.$inputs;
+  var $inputs = $module.querySelectorAll('input[type="radio"]');
 
   /**
   * Loop over all items with [data-controls]
@@ -6671,25 +6634,87 @@ Radios.prototype.init = function () {
 };
 
 Radios.prototype.setAttributes = function ($input) {
-  var inputIsChecked = $input.checked;
-  $input.setAttribute('aria-expanded', inputIsChecked);
+  var $content = document.querySelector('#' + $input.getAttribute('aria-controls'));
 
-  var $content = this.$module.querySelector('#' + $input.getAttribute('aria-controls'));
-  if ($content) {
+  if ($content && $content.classList.contains('govuk-radios__conditional')) {
+    var inputIsChecked = $input.checked;
+
+    $input.setAttribute('aria-expanded', inputIsChecked);
+
     $content.classList.toggle('govuk-radios__conditional--hidden', !inputIsChecked);
   }
 };
 
 Radios.prototype.handleClick = function (event) {
-  nodeListForEach(this.$inputs, function ($input) {
-    // If a radio with aria-controls, handle click
-    var isRadio = $input.getAttribute('type') === 'radio';
-    var hasAriaControls = $input.getAttribute('aria-controls');
-    if (isRadio && hasAriaControls) {
+  var $clickedInput = event.target;
+  // We only want to handle clicks for radio inputs
+  if ($clickedInput.type !== 'radio') {
+    return
+  }
+  // Because checking one radio can uncheck a radio in another $module,
+  // we need to call set attributes on all radios in the same form, or document if they're not in a form.
+  //
+  // We also only want radios which have aria-controls, as they support conditional reveals.
+  var $allInputs = document.querySelectorAll('input[type="radio"][aria-controls]');
+  nodeListForEach($allInputs, function ($input) {
+    // Only inputs with the same form owner should change.
+    var hasSameFormOwner = ($input.form === $clickedInput.form);
+
+    // In radios, only radios with the same name will affect each other.
+    var hasSameName = ($input.name === $clickedInput.name);
+    if (hasSameName && hasSameFormOwner) {
       this.setAttributes($input);
     }
   }.bind(this));
 };
+
+(function(undefined) {
+
+    // Detection from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-b09a5d2acf3314b46a6c8f8d0c31b85c
+    var detect = (
+      'Element' in this && "nextElementSibling" in document.documentElement
+    );
+
+    if (detect) return
+
+
+    (function (global) {
+
+      // Polyfill from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-404b69b4750d18dea4174930a49170fd
+      Object.defineProperty(Element.prototype, "nextElementSibling", {
+        get: function(){
+          var el = this.nextSibling;
+          while (el && el.nodeType !== 1) { el = el.nextSibling; }
+          return (el.nodeType === 1) ? el : null;
+        }
+      });
+
+    }(this));
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+
+    // Detection from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-a162235fbc9c0dd40d4032265f44942e
+    var detect = (
+      'Element' in this && 'previousElementSibling' in document.documentElement
+    );
+
+    if (detect) return
+
+    (function (global) {
+      // Polyfill from https://github.com/Financial-Times/polyfill-service/pull/1062/files#diff-b45a1197b842728cb76b624b6ba7d739
+      Object.defineProperty(Element.prototype, 'previousElementSibling', {
+        get: function(){
+          var el = this.previousSibling;
+          while (el && el.nodeType !== 1) { el = el.previousSibling; }
+          return (el.nodeType === 1) ? el : null;
+        }
+      });
+
+    }(this));
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
 function Tabs ($module) {
   this.$module = $module;
@@ -6832,6 +6857,7 @@ Tabs.prototype.setAttributes = function ($tab) {
   $tab.setAttribute('id', 'tab_' + panelId);
   $tab.setAttribute('role', 'tab');
   $tab.setAttribute('aria-controls', panelId);
+  $tab.setAttribute('aria-selected', 'false');
   $tab.setAttribute('tabindex', '-1');
 
   // set panel attributes
@@ -6846,6 +6872,7 @@ Tabs.prototype.unsetAttributes = function ($tab) {
   $tab.removeAttribute('id');
   $tab.removeAttribute('role');
   $tab.removeAttribute('aria-controls');
+  $tab.removeAttribute('aria-selected');
   $tab.removeAttribute('tabindex');
 
   // unset panel attributes
@@ -6856,6 +6883,10 @@ Tabs.prototype.unsetAttributes = function ($tab) {
 };
 
 Tabs.prototype.onTabClick = function (e) {
+  if (!e.target.classList.contains('govuk-tabs__tab')) {
+  // Allow events on child DOM elements to bubble up to tab parent
+    return false
+  }
   e.preventDefault();
   var $newTab = e.target;
   var $currentTab = this.getCurrentTab();
@@ -6895,7 +6926,7 @@ Tabs.prototype.activateNextTab = function () {
   var currentTab = this.getCurrentTab();
   var nextTabListItem = currentTab.parentNode.nextElementSibling;
   if (nextTabListItem) {
-    var nextTab = nextTabListItem.firstElementChild;
+    var nextTab = nextTabListItem.querySelector('.govuk-tabs__tab');
   }
   if (nextTab) {
     this.hideTab(currentTab);
@@ -6909,7 +6940,7 @@ Tabs.prototype.activatePreviousTab = function () {
   var currentTab = this.getCurrentTab();
   var previousTabListItem = currentTab.parentNode.previousElementSibling;
   if (previousTabListItem) {
-    var previousTab = previousTabListItem.firstElementChild;
+    var previousTab = previousTabListItem.querySelector('.govuk-tabs__tab');
   }
   if (previousTab) {
     this.hideTab(currentTab);
@@ -6936,18 +6967,18 @@ Tabs.prototype.hidePanel = function (tab) {
 
 Tabs.prototype.unhighlightTab = function ($tab) {
   $tab.setAttribute('aria-selected', 'false');
-  $tab.classList.remove('govuk-tabs__tab--selected');
+  $tab.parentNode.classList.remove('govuk-tabs__list-item--selected');
   $tab.setAttribute('tabindex', '-1');
 };
 
 Tabs.prototype.highlightTab = function ($tab) {
   $tab.setAttribute('aria-selected', 'true');
-  $tab.classList.add('govuk-tabs__tab--selected');
+  $tab.parentNode.classList.add('govuk-tabs__list-item--selected');
   $tab.setAttribute('tabindex', '0');
 };
 
 Tabs.prototype.getCurrentTab = function () {
-  return this.$module.querySelector('.govuk-tabs__tab--selected')
+  return this.$module.querySelector('.govuk-tabs__list-item--selected .govuk-tabs__tab')
 };
 
 // this is because IE doesn't always return the actual value but a relative full path
@@ -6967,45 +6998,45 @@ function initAll (options) {
   // Defaults to the entire document if nothing is set.
   var scope = typeof options.scope !== 'undefined' ? options.scope : document;
 
-  // Find all buttons with [role=button] on the scope to enhance.
-  new Button(scope).init();
+  var $buttons = scope.querySelectorAll('[data-module="govuk-button"]');
+  nodeListForEach($buttons, function ($button) {
+    new Button($button).init();
+  });
 
-  // Find all global accordion components to enhance.
-  var $accordions = scope.querySelectorAll('[data-module="accordion"]');
+  var $accordions = scope.querySelectorAll('[data-module="govuk-accordion"]');
   nodeListForEach($accordions, function ($accordion) {
     new Accordion($accordion).init();
   });
 
-  // Find all global details elements to enhance.
-  var $details = scope.querySelectorAll('details');
+  var $details = scope.querySelectorAll('[data-module="govuk-details"]');
   nodeListForEach($details, function ($detail) {
     new Details($detail).init();
   });
 
-  var $characterCount = scope.querySelectorAll('[data-module="character-count"]');
-  nodeListForEach($characterCount, function ($characterCount) {
+  var $characterCounts = scope.querySelectorAll('[data-module="govuk-character-count"]');
+  nodeListForEach($characterCounts, function ($characterCount) {
     new CharacterCount($characterCount).init();
   });
 
-  var $checkboxes = scope.querySelectorAll('[data-module="checkboxes"]');
+  var $checkboxes = scope.querySelectorAll('[data-module="govuk-checkboxes"]');
   nodeListForEach($checkboxes, function ($checkbox) {
     new Checkboxes($checkbox).init();
   });
 
   // Find first error summary module to enhance.
-  var $errorSummary = scope.querySelector('[data-module="error-summary"]');
+  var $errorSummary = scope.querySelector('[data-module="govuk-error-summary"]');
   new ErrorSummary($errorSummary).init();
 
   // Find first header module to enhance.
-  var $toggleButton = scope.querySelector('[data-module="header"]');
+  var $toggleButton = scope.querySelector('[data-module="govuk-header"]');
   new Header($toggleButton).init();
 
-  var $radios = scope.querySelectorAll('[data-module="radios"]');
+  var $radios = scope.querySelectorAll('[data-module="govuk-radios"]');
   nodeListForEach($radios, function ($radio) {
     new Radios($radio).init();
   });
 
-  var $tabs = scope.querySelectorAll('[data-module="tabs"]');
+  var $tabs = scope.querySelectorAll('[data-module="govuk-tabs"]');
   nodeListForEach($tabs, function ($tabs) {
     new Tabs($tabs).init();
   });
@@ -7042,3 +7073,4 @@ exports.Tabs = Tabs;
 </body>
 
 </html>
+
