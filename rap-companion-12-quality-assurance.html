@@ -4235,9 +4235,9 @@ We demonstrate this hierarchy below by evaluating this code.
 
 futile.logger::flog.debug(&quot;This won't print&quot;)
 futile.logger::flog.info(&quot;But this %s&quot;, 'will')</code></pre>
-<pre><code>## INFO [2019-10-16 08:40:48] But this will</code></pre>
+<pre><code>## INFO [2019-10-21 08:06:55] But this will</code></pre>
 <pre class="r"><code>futile.logger::flog.warn(&quot;As will %s&quot;, 'this')</code></pre>
-<pre><code>## WARN [2019-10-16 08:40:48] As will this</code></pre>
+<pre><code>## WARN [2019-10-21 08:06:55] As will this</code></pre>
 <pre class="r"><code>x &lt;- c(&quot;culture&quot;, &quot;sport&quot;, NA)
 
   message('Checking x does not contain missing values...')
@@ -4256,11 +4256,11 @@ futile.logger::flog.trace(&quot;Checking x does not contain missing values...&qu
     futile.logger::flog.error(&quot;x cannot contain any missing values.&quot;,
                x, capture = TRUE)
   }</code></pre>
-<pre><code>## ERROR [2019-10-16 08:40:48] x cannot contain any missing values.
+<pre><code>## ERROR [2019-10-21 08:06:55] x cannot contain any missing values.
 ## 
 ## [1] &quot;culture&quot; &quot;sport&quot;   NA</code></pre>
 <pre class="r"><code>futile.logger::flog.info(&quot;Finished checks.&quot;)</code></pre>
-<pre><code>## INFO [2019-10-16 08:40:48] Finished checks.</code></pre>
+<pre><code>## INFO [2019-10-21 08:06:55] Finished checks.</code></pre>
 <p class="govuk-body">
 The above example can help the user identify where the pipeline is going wrong by logging the error and capturing the object <code>x</code> where the data is missing. This allows us to more quickly track down what’s going wrong.
 </p>
